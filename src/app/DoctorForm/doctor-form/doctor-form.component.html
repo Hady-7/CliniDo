@@ -1,1 +1,198 @@
-<p>doctor-form works!</p>
+<section id="areYouDoctor" >
+  <div class="container-fluid content">
+      <div class="title">
+          <h1>Are you a Doctor?</h1>
+      </div>
+      <div class="areYouDoctorForm">
+          <div class="container-fluid">
+              <div class="sign">
+                  <form class="global"  id="xyz" novalidate="novalidate" (ngSubmit)="onSubmit(form)" #form='ngForm'>
+                      <input type="hidden" name="_token" value="">
+                      <div class="row formRow">
+                          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 formCol">
+                              <div class="form-group">
+                                  <label for="firstName">First name</label>
+                                  <input id="firstName" class="form-control input-lg formInputs" type="text"
+                                      name="firstName" placeholder="Type Your First Name Here..."
+                                      autocomplete="off" ngModel required>
+                                  <span id="firstname1" style="color: #ff0000;"></span>
+                              </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 formCol">
+                              <div class="form-group">
+                                  <label for="lastName">Last name</label>
+                                  <input id="lastName" class="form-control input-lg formInputs" type="text"
+                                      name="lastName" placeholder="Type Your Last Name Here..."
+                                      autocomplete="off" ngModel>
+                                  <span id="lastname1" style="color: #ff0000;"></span>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                              <div class="form-group">
+                                  <label for="phone">Phone number</label>
+                                  <input id="countryCode" class="form-control input-lg center formInputs"
+                                      type="hidden" name="countryCode" value="20">
+                                  <div class="iti iti--allow-dropdown">
+                                      <input class="form-control input-lg center formInputs" id="mobile"
+                                          type="tel" name="mobile" maxlength="17" autocomplete="off"
+                                          data-intl-tel-input-id="0" value placeholder=" " ngModel>
+                                  </div>
+                                  <span class="text-danger text-center show-msg" id="mobile1"
+                                      style="color: #ff0000;"></span>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                              <div class="form-group">
+                                  <label for="speciality">Choose a speciality</label>
+                                  <select class="input-field input-lg formInputs" id="mySelect" name="drCategory" ngModel>
+                                      <option value name="drCategory">Choose a speciality</option>
+                                      <option value="32" data-id="32" id="drCategory" name="drCategory">Allergy
+                                          and Immunology (Sensitivity and Immunity)</option>
+                                      <option value="33" data-id="33" id="drCategory" name="drCategory">Andrology
+                                          and Male Infertility</option>
+                                      <option value="34" data-id="34" id="drCategory" name="drCategory">Audiology
+                                      </option>
+                                      <option value="35" data-id="35" id="drCategory" name="drCategory">Cardiology
+                                          and Thorcic Surgery (Heart / Chest)</option>
+                                      <option value="31" data-id="31" id="drCategory" name="drCategory">Cardiology
+                                          and Vascular Disease (Heart)</option>
+                                      <option value="36" data-id="36" id="drCategory" name="drCategory">Chest and
+                                          Respiratory</option>
+                                      <option value="24" data-id="24" id="drCategory" name="drCategory">Dentistry
+                                          (Teeth)</option>
+                                      <option value="23" data-id="23" id="drCategory" name="drCategory">
+                                          Dermatology (Skin)</option>
+                                      <option value="37" data-id="37" id="drCategory" name="drCategory">Diabetes
+                                          and Endocrinology</option>
+                                      <option value="5" data-id="5" id="drCategory" name="drCategory">Diagnostic
+                                          Radiology</option>
+                                      <option value="6" data-id="6" id="drCategory" name="drCategory">Dietician
+                                          and Nutrition</option>
+                                      <option value="30" data-id="30" id="drCategory" name="drCategory">Ear, Nose
+                                          and Throat</option>
+                                      <option value="46" data-id="46" id="drCategory" name="drCategory">Family
+                                          medicine</option>
+                                      <option value="8" data-id="8" id="drCategory" name="drCategory">
+                                          Gastroenterology and Endoscopy</option>
+                                      <option value="9" data-id="9" id="drCategory" name="drCategory">General
+                                          Pracitce</option>
+                                      <option value="10" data-id="10" id="drCategory" name="drCategory">General
+                                          Surgery</option>
+                                      <option value="7" data-id="7" id="drCategory" name="drCategory">Geriatrics
+                                          (Old People Health)</option>
+                                      <option value="29" data-id="29" id="drCategory" name="drCategory">
+                                          Gynaecology and Infertility</option>
+                                      <option value="11" data-id="11" id="drCategory" name="drCategory">Hematology
+                                      </option>
+                                      <option value="12" data-id="12" id="drCategory" name="drCategory">Hepatology
+                                          (Liver Doctor)</option>
+                                      <option value="38" data-id="38" id="drCategory" name="drCategory">Internal
+                                          Medicine</option>
+                                      <option value="39" data-id="39" id="drCategory" name="drCategory">IVF and
+                                          Infertility</option>
+                                      <option value="51" data-id="51" id="drCategory" name="drCategory">
+                                          Maxillofacial Surgery</option>
+                                      <option value="40" data-id="40" id="drCategory" name="drCategory">
+                                          Nephorology</option>
+                                      <option value="49" data-id="49" id="drCategory" name="drCategory">Neurology
+                                          (Brain Nervs)</option>
+                                      <option value="42" data-id="42" id="drCategory" name="drCategory">Obesity
+                                          and Laparoscopic Surgery</option>
+                                      <option value="43" data-id="43" id="drCategory" name="drCategory">Oncology
+                                          (Tumor)</option>
+                                      <option value="44" data-id="44" id="drCategory" name="drCategory">Oncology
+                                          Surgery (Tumor Surgery)</option>
+                                      <option value="45" data-id="45" id="drCategory" name="drCategory">
+                                          Ophthalmology (Eyes)</option>
+                                      <option value="28" data-id="28" id="drCategory" name="drCategory">
+                                          Orthopedics (Bones)</option>
+                                      <option value="13" data-id="13" id="drCategory" name="drCategory">Osteopathy
+                                          (Osteopathic Medicine)</option>
+                                      <option value="14" data-id="14" id="drCategory" name="drCategory">Pain
+                                          Management</option>
+                                      <option value="15" data-id="15" id="drCategory" name="drCategory">Pediatric
+                                          Surgery</option>
+                                      <option value="26" data-id="26" id="drCategory" name="drCategory">Pediatrics
+                                          and New Born (Child)</option>
+                                      <option value="16" data-id="16" id="drCategory" name="drCategory">
+                                          Phoniatrics</option>
+                                      <option value="17" data-id="17" id="drCategory" name="drCategory">
+                                          Physiotherapy and Sport Injuries</option>
+                                      <option value="18" data-id="18" id="drCategory" name="drCategory">Plastic
+                                          Surgery</option>
+                                      <option value="25" data-id="25" id="drCategory" name="drCategory">psychiatry
+                                          (Mental, Emotional or Behavioral Disorders)</option>
+                                      <option value="19" data-id="19" id="drCategory" name="drCategory">
+                                          Rheumatology</option>
+                                      <option value="20" data-id="20" id="drCategory" name="drCategory">Spinal
+                                          Surgery</option>
+                                      <option value="21" data-id="21" id="drCategory" name="drCategory">Urology
+                                          (Urinary System)</option>
+                                      <option value="22" data-id="22" id="drCategory" name="drCategory">Vascular
+                                          Surgery (Arteries and Vein Surgery)</option>
+
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                              <div class="form-group">
+                                  <label for="city">Choose City</label>
+                                  <select class="input-field input-lg valid formInputs" id="selectCity"
+                                      name="drCity" aria-required="true" aria-invalid="false" ngModel>
+                                      <option name="drCity" value>Choose City</option>
+                                      <option value="3" data-id="3" id="drCity" name="drCity">Alexandria</option>
+                                      <option value="21" data-id="21" id="drCity" name="drCity">Assuit</option>
+                                      <option value="25" data-id="25" id="drCity" name="drCity">Asswan</option>
+                                      <option value="28" data-id="28" id="drCity" name="drCity">Beni Suef</option>
+                                      <option value="1" data-id="1" id="drCity" name="drCity">Cairo</option>
+                                      <option value="19" data-id="19" id="drCity" name="drCity">Damietta</option>
+                                      <option value="18" data-id="18" id="drCity" name="drCity">El Beheira
+                                      </option>
+                                      <option value="24" data-id="24" id="drCity" name="drCity">El Dakahlia
+                                      </option>
+                                      <option value="7" data-id="7" id="drCity" name="drCity">El Ismailia</option>
+                                      <option value="13" data-id="13" id="drCity" name="drCity">Minia</option>
+                                      <option value="17" data-id="17" id="drCity" name="drCity">El Sharqia
+                                      </option>
+                                      <option value="16" data-id="16" id="drCity" name="drCity">Fayoum</option>
+                                      <option value="6" data-id="6" id="drCity" name="drCity">Gharbia</option>
+                                      <option value="2" data-id="2" id="drCity" name="drCity">Giza</option>
+                                      <option value="8" data-id="8" id="drCity" name="drCity">Hurghada</option>
+                                      <option value="14" data-id="14" id="drCity" name="drCity">Kafr El Sheikh
+                                      </option>
+                                      <option value="22" data-id="22" id="drCity" name="drCity">Luxor</option>
+                                      <option value="20" data-id="20" id="drCity" name="drCity">Matrouh</option>
+                                      <option value="15" data-id="15" id="drCity" name="drCity">Menoufia</option>
+                                      <option value="4" data-id="4" id="drCity" name="drCity">North Coast</option>
+                                      <option value="10" data-id="10" id="drCity" name="drCity">Port Said</option>
+                                      <option value="5" data-id="5" id="drCity" name="drCity">Qalyubia</option>
+                                      <option value="23" data-id="23" id="drCity" name="drCity">Qena</option>
+                                      <option value="9" data-id="9" id="drCity" name="drCity">Sharm El Sheikh
+                                      </option>
+                                      <option value="12" data-id="12" id="drCity" name="drCity">Sohag</option>
+                                      <option value="11" data-id="11" id="drCity" name="drCity">Suez</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                              <div class="form-group">
+                                  <label for="area">Choose Area</label>
+                                  <select id="selectArea" name="drArea" class="input-field input-lg formInputs" ngModel>
+                                    <option value="0" id="drArea" name="drArea" selected disabled>Choose Area
+                                    </option>
+                                    <option value="0" id="drArea" name="drArea" selected >dokki
+                                    </option>
+
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                              <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-nav fnt-25 btn-success" id="submit">Send</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

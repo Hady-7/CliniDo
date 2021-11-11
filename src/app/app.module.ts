@@ -9,6 +9,7 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { FindDoctorComponent } from './HomeScreen/find-doctor/find-doctor.component';
 import { CarouselComponent } from './HomeScreen/carousel/carousel.component';
 import { StaticContentComponent } from './HomeScreen/static-content/static-content.component';
+import { CardComponent } from './Layout/card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StaticContentComponent } from './HomeScreen/static-content/static-conte
     FooterComponent,
     FindDoctorComponent,
     CarouselComponent,
-    StaticContentComponent
+    StaticContentComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

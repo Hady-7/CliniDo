@@ -1,0 +1,16 @@
+#svgg {
+  margin-left: 40%;
+}
+
+.form-select {
+  height: 60px;
+}
+
+.doctor-name {
+  border-radius: 8px;
+  padding-left: 2%;
+  background-color: #efeff4;
+  border: none;
+  width: 80%;
+  height: 100%;
+}

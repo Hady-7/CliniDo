@@ -9,6 +9,12 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { FindDoctorComponent } from './HomeScreen/find-doctor/find-doctor.component';
 import { CarouselComponent } from './HomeScreen/carousel/carousel.component';
 import { StaticContentComponent } from './HomeScreen/static-content/static-content.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -24,7 +30,14 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    FormsModule
+  ],
+  exports: [
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

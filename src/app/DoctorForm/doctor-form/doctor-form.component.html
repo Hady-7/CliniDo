@@ -1,1 +1,87 @@
-
+<section id="areYouDoctor">
+  <div class="container-fluid content">
+    <div class="title">
+      <h1>Are you a Doctor?</h1>
+    </div>
+    <div class="areYouDoctorForm">
+      <div class="container-fluid">
+        <div class="sign">
+          <form class="global" id="xyz" novalidate="novalidate" (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <input type="hidden" name="_token" value="" />
+            <div class="row formRow">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 formCol">
+                <div class="form-group">
+                  <label for="firstName">First name</label>
+                  <input id="firstName" class="form-control input-lg formInputs" type="text" name="firstName"
+                    placeholder="Type Your First Name Here..." autocomplete="off" ngModel required />
+                  <span id="firstname1" style="color: #ff0000"></span>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 formCol">
+                <div class="form-group">
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" class="form-control input-lg formInputs" type="text" name="lastName"
+                    placeholder="Type Your Last Name Here..." autocomplete="off" ngModel />
+                  <span id="lastname1" style="color: #ff0000"></span>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                <div class="form-group">
+                  <label for="phone">Phone number</label>
+                  <input id="countryCode" class="form-control input-lg center formInputs" type="hidden"
+                    name="countryCode" value="20" />
+                  <div class="iti iti--allow-dropdown">
+                    <input class="form-control input-lg center formInputs" id="mobile" type="tel" name="mobile"
+                      maxlength="17" autocomplete="off" data-intl-tel-input-id="0" value placeholder=" " ngModel />
+                  </div>
+                  <span class="text-danger text-center show-msg" id="mobile1" style="color: #ff0000"></span>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                <div class="form-group">
+                  <label for="speciality">Choose a speciality</label>
+                  <select class="input-field input-lg formInputs" id="mySelect" name="drCategory" ngModel>
+                    <option name="drCity">Choose Category</option>
+                    <option *ngFor="let cat of DoctorCategory" [value]="cat.name">
+                      {{ cat.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                <div class="form-group">
+                  <label for="city">Choose City</label>
+                  <select class="input-field input-lg valid formInputs" id="selectCity" name="drCity" ngModel>
+                    <option name="drCity">Choose City</option>
+                    <option *ngFor="let city of CityCategory" [value]="city.name">
+                      {{ city.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                <div class="form-group">
+                  <label for="area">Choose Area</label>
+                  <select id="selectArea" name="drArea" class="input-field input-lg formInputs" ngModel>
+                    <option value="0" id="drArea" name="drArea" selected disabled>
+                      Choose Area
+                    </option>
+                    <option value="dokki" id="drArea" name="drArea" selected>
+                      dokki
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
+                <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-nav fnt-25 btn-success"
+                  id="submit">
+                  Send
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

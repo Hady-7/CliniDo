@@ -14,6 +14,24 @@ $margTop: 8%;
 // body {
 //   background-color: #efeff4 !important;
 // }
+#cont1 {
+  padding-top: $margTop;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  #cont1 {
+    padding-top: 20%;
+  }
+}
+
+@media (max-width: 400px) {
+  #cont1 {
+    padding-top: 40%;
+  }
+}
+#row1 {
+  justify-content: space-evenly;
+}
 #CallUs {
   background-color: $callUsColor;
   width: 120px;

@@ -30,6 +30,7 @@ doctors!:Doctor[];
       drCategory : [],
       drCity : [],
       drArea : [],
+      
     }
   }
 

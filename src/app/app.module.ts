@@ -10,6 +10,13 @@ import { FindDoctorComponent } from './HomeScreen/find-doctor/find-doctor.compon
 import { CarouselComponent } from './HomeScreen/carousel/carousel.component';
 import { StaticContentComponent } from './HomeScreen/static-content/static-content.component';
 import { CardComponent } from './Layout/card/card.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +31,14 @@ import { CardComponent } from './Layout/card/card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    FormsModule
+  ],
+  exports: [
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,22 +1,7 @@
-$breakpoint-tablet: 991px;
-$breakpoint2-tablet: 767px;
-$button-Width: 100px;
-$logoColor: #004f71;
-$callUsColor: #38b9db;
-$margTop: 8%;
-// * {
-//   padding: 0;
-//   border: 0;
-//   box-sizing: border-box;
-//   outline: none;
-// }
-// body {
-//   background-color: #efeff4 !important;
-// }
-
 .c1 {
-  background-color: $logoColor;
+  background-color: #004f71;
 }
+
 #one {
   margin-top: 5%;
   margin-left: 5%;
@@ -27,6 +12,7 @@ $margTop: 8%;
   text-align: left;
   color: #ffffff;
 }
+
 .why-img {
   float: right;
   display: flex;
@@ -35,6 +21,7 @@ $margTop: 8%;
   width: 90%;
   margin-bottom: 18px;
 }
+
 .why-h4 {
   font-family: "FFShamelFamily-SansOneBold";
   font-size: 20px;
@@ -48,16 +35,18 @@ $margTop: 8%;
   display: inline-block;
   margin-top: 0px;
 }
+
 .xb {
   margin-top: -10%;
   width: 70%;
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: 991px) {
   .xb {
     display: none;
   }
 }
+
 .wrapper {
   padding-top: 50px;
   color: #38b9db;
@@ -65,40 +54,45 @@ $margTop: 8%;
   width: 90%;
   margin-left: 5%;
 }
+
 .ca {
   border-radius: 16px !important;
   height: 550px;
   border: none !important;
   width: 90%;
 }
+
 .cb {
   text-align: center;
-  box-shadow: 0 9px 30px 0 rgb(189, 189, 189);
+  box-shadow: 0 9px 30px 0 #bdbdbd;
   border-radius: 16px;
 }
+
 .cb h6 {
   font-size: 14px;
   text-transform: uppercase;
   color: #38b9db;
 }
+
 .ctl {
   text-transform: none;
   font-weight: bold;
   font-size: 20px;
   color: #004f6c;
 }
+
 .ct {
   font-size: 18px;
   color: #0e0e0e;
   margin: 10% 0%;
 }
-//////////////////////////////////////
+
 #get {
   border-radius: 16px;
-  //  box-shadow: 0 9px 30px 0 rgb(0 0 0 / 9%);
   background-color: #38b9db;
   margin: 10% 7% 5% 7%;
 }
+
 .get-content {
   margin-top: 10%;
   margin-left: 10%;

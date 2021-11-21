@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { CityCatService } from './../../services/city-cat.service';
+import { DrCategory } from './../../models/DrCategory.model';
+import { CategoryService } from './../../services/category.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Doctor } from 'src/app/models/Doctor.model';
+import { DrCity } from 'src/app/models/DrCity.model';
+import { NewDoctorService } from 'src/app/services/new-doctor.service';
 
 @Component({
   selector: 'app-doctor-form',
@@ -6,10 +13,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctor-form.component.scss']
 })
 export class DoctorFormComponent implements OnInit {
-
-  constructor() { }
+// @ViewChild('form')  signupForm!:NgForm;
+DoctorForm =<Doctor>{};
+DoctorCategory!:DrCategory[];
+CityCategory!:DrCity[];
+doctors!:Doctor[];
+  constructor(
+    private DoctorCatService:CategoryService,
+    private CityCatService:CityCatService,
+    private CrudService:NewDoctorService,
+  ) {
+    this.DoctorForm = {
+      firstName:'',
+      lastName:'',
+      mobile:0,
+      drCategory : [],
+      drCity : [],
+      drArea : [],
+      
+    }
+  }
 
   ngOnInit(): void {
+    this.DoctorCategory = this.DoctorCatService.AllDoctorCategory();
+    this.CityCategory = this.CityCatService.AllDoctorCity();
+    this.CrudService.getAllDoctor().subscribe(res => {
+      console.log(this.doctors = res.map(
+        resss => resss.payload.doc.data() as Doctor
+       ));
+    })
+  }
+
+  onSubmit(Form:NgForm){
+    this.CrudService.AddNewDoctor(Form.value).then( res => {
+      console.log(res);
+    })
   }
 
 }

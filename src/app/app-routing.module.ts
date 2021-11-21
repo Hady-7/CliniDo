@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DoctorFormComponent } from './DoctorForm/doctor-form/doctor-form.component';
+import { SearchComponent } from './HomeScreen/search/search.component';
 
 const routes: Routes = [
   {path:"",component: FindDoctorComponent},
-  {path:"newDoctor",component:DoctorFormComponent}
+  {path:"newDoctor",component:DoctorFormComponent},
+  {path:"search",component:SearchComponent}
 ];
 
 @NgModule({

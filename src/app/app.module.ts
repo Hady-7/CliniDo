@@ -17,6 +17,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './HomeScreen/search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     FindDoctorComponent,
     CarouselComponent,
     StaticContentComponent,
-    CardComponent
+    CardComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   exports: [
     FontAwesomeModule

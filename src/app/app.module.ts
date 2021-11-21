@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { FormsModule } from '@angular/forms';
+import { OnlineComponent } from './OnlinePage/online/online.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     FindDoctorComponent,
     CarouselComponent,
     StaticContentComponent,
-    CardComponent
+    CardComponent,
+    OnlineComponent
   ],
   imports: [
     BrowserModule,

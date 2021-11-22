@@ -52,6 +52,7 @@ font-weight:bold;
   padding-left: 3%;
 }
 
+
 //////////////////////////////////////////////////////////////////@at-root
 
 
@@ -123,10 +124,28 @@ $btnColor : #30C34B;
     display: none;
   }
 }
-.imo{
-  margin-left: 4%;
+// .imo{
+//   margin-left: 4%;
+
+// }
+
+.repeated-questions{
+border: white  3px solid;
+border-radius: 30px;
+// box-shadow: #004f71 10px;
 }
 
+.faq{
+  background-color: white;
+  width: 10%;
+  padding-left: 2%;
+  margin-top: 1%;
+  border-radius: 40px;
+}
+.ques{
+  margin-left: 3%;
+  margin-top: 3%;
+}
 // @media screen and (max-width: 768px){
 //   #carouselExampleIndicators{
 //       .carousel-inner{

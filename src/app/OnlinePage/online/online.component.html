@@ -26,53 +26,14 @@
 
 <div class="container-fluid x">
 <div class="row" >
-  <div class=" col-md-5 col-sm-12 col-xs-12  ">
-      <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3"
-          aria-label=".form-select-lg ">
-          <option selected> Choose a speciality </option>
-          <option value="32" data-id="32" id="drcategory" name="drcategory">  Allergy an Immunology (Sensitivity and Immunity) </option>
-          <option value="33" data-id="33" id="drcategory" name="drcategory">  Andrology and Male Infertility </option>
-          <option value="34" data-id="34" id="drcategory" name="drcategory"> Audiology  </option>
-          <option value="35" data-id="35" id="drcategory" name="drcategory"> Cardiology and  Thoracic Surgery (Heart / Chest) </option>
-          <option value="31" data-id="31" id="drcategory" name="drcategory"> Cardiology and  Vascular Disease (Heart) </option>
-          <option value="36" data-id="36" id="drcategory" name="drcategory"> Chest and  Respiratory </option>
-          <option value="24" data-id="24" id="drcategory" name="drcategory"> Dentistry (Teeth) </option>
-          <option value="23" data-id="23" id="drcategory" name="drcategory"> Dermatology (Skin) </option>
-          <option value="37" data-id="37" id="drcategory" name="drcategory"> Diabetes and  Endocrinology </option>
-          <option value="6" data-id="6" id="drcategory" name="drcategory"> Dietician and  Nutrition </option>
-          <option value="30" data-id="30" id="drcategory" name="drcategory"> Ear, Nose and Throat </option>
-          <option value="46" data-id="46" id="drcategory" name="drcategory"> Family Medicine  </option>
-          <option value="8" data-id="8" id="drcategory" name="drcategory"> Gastroenterology  and Endoscopy </option>
-          <option value="9" data-id="9" id="drcategory" name="drcategory"> General Practice  </option>
-          <option value="10" data-id="10" id="drcategory" name="drcategory"> General Surgery </option>
-          <option value="7" data-id="7" id="drcategory" name="drcategory"> Geriatrics (Old  People Health) </option>
-          <option value="29" data-id="29" id="drcategory" name="drcategory"> Gynaecology and  Infertility </option>
-          <option value="11" data-id="11" id="drcategory" name="drcategory"> Hematology  </option>
-          <option value="12" data-id="12" id="drcategory" name="drcategory"> Hepatology (Liver  Doctor) </option>
-          <option value="38" data-id="38" id="drcategory" name="drcategory"> Internal Medicine </option>
-          <option value="39" data-id="39" id="drcategory" name="drcategory"> IVF and Infertility </option>
-          <option value="51" data-id="51" id="drcategory" name="drcategory"> Maxillofacial  Surgery </option>
-          <option value="40" data-id="40" id="drcategory" name="drcategory"> Nephrology </option>
-          <option value="49" data-id="49" id="drcategory" name="drcategory"> Neurology (Brain / Nerves) </option>
-          <option value="41" data-id="41" id="drcategory" name="drcategory"> Neurosurgery (Brain / Nerves Surgery) </option>
-          <option value="42" data-id="42" id="drcategory" name="drcategory"> Obesity and Laparoscopic Surgery </option>
-          <option value="43" data-id="43" id="drcategory" name="drcategory"> Oncology (Tumor)  </option>
-          <option value="44" data-id="44" id="drcategory" name="drcategory"> Oncology Surgery (Tumor Surgery) </option>
-          <option value="45" data-id="45" id="drcategory" name="drcategory"> Ophthalmology  (Eyes) </option>
-          <option value="28" data-id="28" id="drcategory" name="drcategory"> Orthopedics  (Bones) </option>
-          <option value="13" data-id="13" id="drcategory" name="drcategory"> Osteopathy (Osteopathic Medicine) </option>
-          <option value="14" data-id="14" id="drcategory" name="drcategory"> Pain Management  </option>
-          <option value="15" data-id="15" id="drcategory" name="drcategory"> Pediatric Surgery </option>
-          <option value="26" data-id="26" id="drcategory" name="drcategory"> Pediatrics and  New Born (Child) </option>
-          <option value="16" data-id="16" id="drcategory" name="drcategory"> Phoniatrics (Speech) </option>
-          <option value="17" data-id="17" id="drcategory" name="drcategory"> Physiotherapy and Sport Injuries </option>
-          <option value="18" data-id="18" id="drcategory" name="drcategory"> Plastic Surgery  </option>
-          <option value="25" data-id="25" id="drcategory" name="drcategory"> Psychiatry  (Mental, Emotional or Behavioral Disorders) </option>
-          <option value="19" data-id="19" id="drcategory" name="drcategory"> Rheumatology </option>
-          <option value="20" data-id="20" id="drcategory" name="drcategory"> Spinal Surgery </option>
-          <option value="21" data-id="21" id="drcategory" name="drcategory"> Urology (Urinary System) </option>
-          <option value="22" data-id="22" id="drcategory" name="drcategory"> Vascular Surgery (Arteries and Vein Surgery) </option>
-      </select>
+  <div class=" col-md-5 col-sm-12 col-xs-12  " >
+    <select class="form-select form-select-lg mb-3 " id="mySelect"  style="background-color:#efeff4 ;"  >
+      <option name="drCity">Choose Category</option>
+      <option *ngFor="let cat of DoctorCategory" [value]="cat.name">
+        {{ cat.name }}
+      </option>
+    </select>
+
   </div>
 </div>
 
@@ -148,19 +109,19 @@
 
 
 <section id="freqaskedquestions">
-  <div class="container-fluid">
+  <div class="container-fluid" >
       <div class="row">
-          <div class="col-lg-2 col-md-2 col-sm-0 col-xs-0 imo">
-              <img class="" src="https://clinido.com/public/images/img-tips.svg">
-          </div>
-          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 repeated-questions">
-          <h2>FAQs</h2>
-          <div class="">
+
+          <img class="col-lg-2 col-md-2 col-sm-0 col-xs-0 imo" src="https://clinido.com/public/images/img-tips.svg">
+
+          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 repeated-questions shadow-lg">
+          <h2 class="faq">FAQs</h2>
+          <div class="ques">
                   <div  id="accordion">
                     <ul>
                       <li>
                       <button type="button" class="btn  but" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                        How to see a doctor while staying at home?                      </button>
+                        <h6>How to see a doctor while staying at home?  </h6>                    </button>
 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
@@ -185,7 +146,7 @@
                       </li>
                       <li>
                       <button type="button" class="btn  but" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                        When should I choose to see doctor online?</button>
+                        <h6>When should I choose to see doctor online?</h6></button>
 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
@@ -211,7 +172,7 @@
 
                     <li>
                       <button type="button" class="btn  but" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                        How to book an online consultation?                    </button>
+                        <h6>How to book an online consultation? </h6>                   </button>
 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
@@ -240,7 +201,7 @@
                     </li>
                     <li>
                       <button type="button" class="btn  but" data-bs-toggle="modal" data-bs-target="#exampleModal4">
-                        How to pay for the consultation?                      </button>
+                       <h6> How to pay for the consultation?       </h6>               </button>
 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
@@ -265,7 +226,7 @@
                     </li>
                     <li>
                       <button type="button" class="btn  but" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-                        How do the online consultation take place?             </button>
+                        <h6>How do the online consultation take place?  </h6>             </button>
 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">

@@ -1,6 +1,6 @@
 #areYouDoctor {
   background-color: #efeff4;
-  // margin-top: 200px;
+  margin-top: 50px;
   padding-bottom: 1px;
   padding-top: 5px;
 }
@@ -99,4 +99,18 @@
   color: #fff;
   display: block;
   width: 100%;
+}
+#model h5{
+  color: #004f6c;
+  text-align: left;
+  font-weight: 700;
+}
+#model .go-app{
+  display: flex;
+  img{
+    width: 100%;
+  }
+}
+.modal-content{
+  background-color: #efeff4;
 }

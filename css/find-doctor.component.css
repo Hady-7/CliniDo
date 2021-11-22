@@ -1,0 +1,33 @@
+#CallUs {
+  background-color: #38b9db;
+  width: 120px;
+  justify-content: center;
+}
+
+#hh1 {
+  color: #004f71;
+}
+
+#pp1 {
+  color: #004f71;
+}
+
+#calluscol {
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  #calluscol {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  #calluscol {
+    display: flex;
+  }
+}
+
+#svgg {
+  margin-left: 40%;
+}

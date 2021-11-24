@@ -13,7 +13,7 @@ export class AreaCatService {
         { id: 4, name: 'El-Betash' },
         { id: 5, name: 'Sedy Gaber' },
         { id: 6, name: 'Sedy Beshr' },
-        
+
     ]
 
     Cairo: DrArea[] = [
@@ -141,7 +141,7 @@ export class AreaCatService {
         { id: 4, name: 'El-ayat' },
         { id: 5, name: 'Osem' },
         { id: 6, name: 'Kerdasa' },
-        
+
     ]
 
 
@@ -192,7 +192,7 @@ export class AreaCatService {
         { id: 5, name: 'El Dabaa' },
         { id: 6, name: 'El Alamen' },
         { id: 7, name: 'El Hmam' },
-       
+
 
     ]
 
@@ -234,7 +234,7 @@ export class AreaCatService {
         { id: 1, name: 'Ataka' },
         { id: 2, name: 'El Arbaen' },
         { id: 3, name: 'El Ganayen' },
-        
+
 
     ]
 
@@ -258,13 +258,15 @@ export class AreaCatService {
         { id: 5, name: 'Nkada' },
         { id: 6, name: 'Kosa' },
         { id: 7, name: 'El waf' },
-        
+
 
     ]
 
 
 
-
+    // AllAreas(){
+    //   return [...this.DoctorCategory];
+    // }
     // AllDoctorCity() {
     //     return [...this.Qena];
     // }

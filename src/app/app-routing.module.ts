@@ -9,6 +9,7 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
 
 const routes: Routes = [
   {path:"",component: FindDoctorComponent},
+
   {path:"newDoctor",component:DoctorFormComponent},
   {path:"online",component:OnlineComponent},
   {path:"doctorDetails/:id" , component:DoctorDetailsComponent},

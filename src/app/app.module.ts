@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { FormsModule } from '@angular/forms';
 import { OnlineComponent } from './OnlinePage/online/online.component';
+import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doctor-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OnlineComponent } from './OnlinePage/online/online.component';
     CarouselComponent,
     StaticContentComponent,
     CardComponent,
-    OnlineComponent
+    OnlineComponent,
+    DoctorDetailsComponent,
   ],
   imports: [
     BrowserModule,

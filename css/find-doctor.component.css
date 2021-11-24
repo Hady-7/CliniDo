@@ -1,3 +1,23 @@
+#cont1 {
+  padding-top: 8%;
+}
+
+@media (max-width: 991px) {
+  #cont1 {
+    padding-top: 20%;
+  }
+}
+
+@media (max-width: 400px) {
+  #cont1 {
+    padding-top: 40%;
+  }
+}
+
+#row1 {
+  justify-content: space-evenly;
+}
+
 #CallUs {
   background-color: #38b9db;
   width: 120px;
@@ -30,4 +50,30 @@
 
 #svgg {
   margin-left: 40%;
+}
+
+#svgg {
+  margin-left: 40%;
+}
+
+.form-select {
+  height: 60px;
+}
+
+.doctor-name {
+  border-radius: 8px;
+  padding-left: 2%;
+  background-color: #efeff4;
+  border: none;
+  width: 80%;
+  height: 100%;
+}
+
+.feach {
+  border-bottom: #38b9db 3px solid;
+  color: #38b9db;
+  padding-bottom: 20px;
+  width: 17%;
+  margin-left: 70px;
+  margin-bottom: 0;
 }

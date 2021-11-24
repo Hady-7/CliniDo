@@ -16,16 +16,9 @@ export class CardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.CrudService.getAllDoctor().subscribe(res => {
-    //   this.doctors = res.map(actions =>{
-    //     const data = actions.payload.doc.data() as Doctor;
-    //     data.id = actions.payload.doc.id;
-    //     return {...data}
-    //   })
-    //   })
-
 
   }
+
 }
 
 

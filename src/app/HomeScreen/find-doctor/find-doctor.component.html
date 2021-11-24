@@ -34,8 +34,8 @@
       <div class="row ">
           <div class="col-md-12 col-sm-12 col-xs-12  ">
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCategory"
-                  aria-label=".form-select-lg ">
-                  <option selected name="drCity"> Choose a speciality </option>
+                  aria-label=".form-select-lg">
+                  <option selected nsssame="drCity"> Choose a speciality </option>
                   <option value="1" *ngFor="let cat of DoctorCategory"[value]="cat.name">{{cat.name}}</option>
               </select>
           </div>
@@ -45,7 +45,7 @@
       <div class="row justify-content-between">
           <div class="col-md-6 col-sm-6 col-xs-12 ">
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
-                  aria-label=".form-select-lg ">
+                  aria-label=".form-select-lg">
                   <option selected name="drCity"> Choose City </option>
                   <option value="1" *ngFor="let city of CityCategory" [value]="city.name">{{city.name}}</option>
               </select>

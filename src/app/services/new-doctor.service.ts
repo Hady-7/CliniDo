@@ -4,13 +4,13 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { environment } from 'src/environments/environment';
 import { initializeApp } from 'firebase/app';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewDoctorService {
   private dbPath = '/Doctor';
-
   constructor(private AngularFireStore:AngularFirestore) { }
   getAllDoctor(){
     return this.AngularFireStore.collection(this.dbPath).snapshotChanges();

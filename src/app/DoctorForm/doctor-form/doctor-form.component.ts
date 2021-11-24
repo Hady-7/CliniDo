@@ -17,7 +17,7 @@ export class DoctorFormComponent implements OnInit {
 DoctorForm =<Doctor>{};
 DoctorCategory!:DrCategory[];
 CityCategory!:DrCity[];
-doctors!:Doctor[];
+doctors!: Doctor[] ;
   constructor(
     private DoctorCatService:CategoryService,
     private CityCatService:CityCatService,
@@ -30,7 +30,7 @@ doctors!:Doctor[];
       drCategory : [],
       drCity : [],
       drArea : [],
-      
+
     }
   }
 
@@ -38,16 +38,17 @@ doctors!:Doctor[];
     this.DoctorCategory = this.DoctorCatService.AllDoctorCategory();
     this.CityCategory = this.CityCatService.AllDoctorCity();
     this.CrudService.getAllDoctor().subscribe(res => {
-      console.log(this.doctors = res.map(
-        resss => resss.payload.doc.data() as Doctor
-       ));
+    this.doctors = res.map(actions =>{
+      const data = actions.payload.doc.data() as Doctor;
+      data.id = actions.payload.doc.id;
+      return {...data}
+    })
     })
   }
 
   onSubmit(Form:NgForm){
-    this.CrudService.AddNewDoctor(Form.value).then( res => {
-      console.log(res);
-    })
+    this.CrudService.AddNewDoctor(Form.value);
+    console.log(this.doctors);
   }
 
 }

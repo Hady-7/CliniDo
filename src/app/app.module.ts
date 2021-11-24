@@ -19,6 +19,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './HomeScreen/search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OnlineComponent } from './OnlinePage/online/online.component';
 import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doctor-details.component';
 
 @NgModule({
@@ -33,6 +34,8 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
     CardComponent,
 
     SearchComponent,
+    OnlineComponent,
+    DoctorDetailsComponent,
   ],
 
   imports: [

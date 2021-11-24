@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
   specialities!:DrCategory[];
 
 
-  constructor(private city:CityCatService,private docotrName:NewDoctorService,private category:CategoryService) { }
+  constructor(private city:CityCatService,private docotrName:NewDoctorService,private category:CategoryService,) { }
 
   ngOnInit(): void {
     this.specialities=this.category.DoctorCategory;

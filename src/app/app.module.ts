@@ -40,7 +40,6 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    FormsModule
   ],
   exports: [
     FontAwesomeModule

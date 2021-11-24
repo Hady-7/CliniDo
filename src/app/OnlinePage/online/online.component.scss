@@ -1,10 +1,61 @@
+$logoColor: #004f71;
+$callUsColor: #38b9db;
 
-*{
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-  outline: none;
+
+
+.imb{
+margin-bottom: -40%;
+width: 60%;
+
 }
+
+#hh{
+padding-left: 10%;
+
+color:$logoColor;
+font-weight:bold;
+  div{
+    div{
+      h4{
+        margin-top: 3%;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+#img-cont{
+ margin-left: 8%;
+}
+@media (max-width:767px) {
+  #img-cont{
+    display: none;
+  }
+}
+
+#fitcher{
+  border-bottom: $callUsColor  3px solid;
+  color: $callUsColor ;
+  padding-bottom: 10px;
+  width:15%;
+  margin-left: 8%;
+}
+
+@media (max-width:767px) {
+  #fitcher{
+    width:30%;
+  }
+}
+
+.x{
+  margin-top: 3%;
+  padding-left: 3%;
+}
+
+
+//////////////////////////////////////////////////////////////////@at-root
+
+
 
 $blue :#38B9DB;
 $bgColor : #EFEFF4;
@@ -50,14 +101,51 @@ $btnColor : #30C34B;
   }
 }
 
-// @media screen and (max-width: 450px){
-//   #carouselExampleIndicators{
-//       .carousel-inner{
-//           padding: 2em .5em !important;
-//       }
-//   }
+.a{
+  display: flex;
+
+}
+
+@media screen and (max-width: 700px){
+  .a{
+    display: block !important;
+  }
+}
+
+.but{
+  width: 70%;
+  margin-top: 1% ;
+  background-color: $logoColor;
+  color: #EFEFF4;
+}
+
+@media screen and (max-width: 767px){
+  .imo{
+    display: none;
+  }
+}
+// .imo{
+//   margin-left: 4%;
+
 // }
 
+.repeated-questions{
+border: white  3px solid;
+border-radius: 30px;
+// box-shadow: #004f71 10px;
+}
+
+.faq{
+  background-color: white;
+  width: 10%;
+  padding-left: 2%;
+  margin-top: 1%;
+  border-radius: 40px;
+}
+.ques{
+  margin-left: 3%;
+  margin-top: 3%;
+}
 // @media screen and (max-width: 768px){
 //   #carouselExampleIndicators{
 //       .carousel-inner{

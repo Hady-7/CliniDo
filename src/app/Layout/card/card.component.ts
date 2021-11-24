@@ -1,5 +1,5 @@
 import { Doctor } from 'src/app/models/Doctor.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NewDoctorService } from 'src/app/services/new-doctor.service';
 
 @Component({
@@ -8,16 +8,24 @@ import { NewDoctorService } from 'src/app/services/new-doctor.service';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-Doctor!:Doctor[];
-  constructor(private CrudService:NewDoctorService) { }
+  @Input () doctor!:Doctor;
+  doctors!: Doctor[] ;
+
+  constructor(
+    private CrudService:NewDoctorService,
+  ) { }
 
   ngOnInit(): void {
-    this.CrudService.getAllDoctor().subscribe(res => {
-      console.log(this.Doctor = res.map(
-        resss => resss.payload.doc.data() as Doctor
-       ));
-    })
-    console.log(this.Doctor);
-  }
+    // this.CrudService.getAllDoctor().subscribe(res => {
+    //   this.doctors = res.map(actions =>{
+    //     const data = actions.payload.doc.data() as Doctor;
+    //     data.id = actions.payload.doc.id;
+    //     return {...data}
+    //   })
+    //   })
 
+
+  }
 }
+
+

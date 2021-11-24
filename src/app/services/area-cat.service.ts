@@ -264,9 +264,9 @@ export class AreaCatService {
 
 
 
-    // AllAreas(){
-    //   return [...this.DoctorCategory];
-    // }
+    AllAreas(){
+      return [...this.Alexandria,...this.Assuit,...this.BeniSuef,...this.Cairo,...this.Damietta,...this.ElBeheira,...this.ElDakahlia,...this.ElIsmailia,...this.ElSharqia,...this.Fayoum,...this.Gharbia,...this.Giza,...this.Hurghada,...this.KafrElSheikh,...this.Luxor,...this.Matrouh,...this.Menoufia,...this.Minia,...this.NorthCoast,...this.PortSaid,...this.Qena,...this.SharmElSheikh,...this.Sohag,...this.Suez];
+    }
     // AllDoctorCity() {
     //     return [...this.Qena];
     // }

@@ -36,7 +36,7 @@ export class FindDoctorComponent implements OnInit {
   ngOnInit(): void {
     this.DoctorCategory=this.DoctorCatService.AllDoctorCategory();
     this.CityCategory=this.CityCatService.AllDoctorCity();
-    // this.AreaCategory=this.AreaService.
+    this.AreaCategory=this.AreaService.AllAreas();
   }
 
 }

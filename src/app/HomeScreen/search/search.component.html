@@ -39,12 +39,12 @@
                       <i class="icon"><img style="margin:4%;"
                               src="https://clinido.com/public/images/ic-type.svg"></i>
                       <input class="input  doctor-name" type="text" placeholder="Type doctor\center\hospital name"
-                          name="keywordmodel" [value]="">
+                          name="inputValue" #username  [(ngModel)]="filterItem">
                   </div>
               </div>
               <div class="col-md-4 col-sm-12 col-xs-12">
                   <button type="button" style="background-color: #30c34a; color: white;"
-                      class="btn w-100 h-100 fs-4 fw-bold bttn-search">Search</button>
+                      class="btn w-100 h-100 fs-4 fw-bold bttn-search" (click)="clickme(username.value)" >Search</button>
               </div>
           </div>
       </div>
@@ -135,7 +135,6 @@
                       <app-card *ngFor="let item of doctors |filter:filterItem" [doctor]="item"></app-card>
                   </div>
                   <div class="col-md-6">
-                     {{filterItem}}
                   </div>
               </div>
           </div>

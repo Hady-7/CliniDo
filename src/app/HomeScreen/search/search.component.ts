@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   filterItem:any;
   doctors!: Doctor[] ;
   specialities!:DrCategory[];
+  inputValue:string="";
+  doctorDisplay!:Doctor[];
 
 
   constructor(private city:CityCatService,private docotrName:NewDoctorService,private category:CategoryService,) { }
@@ -30,7 +32,18 @@ export class SearchComponent implements OnInit {
       return {...data}
     })
     })
-
+  }
+  clickme(username:string) {
+    // console.log('it does nothing',username);
+    this.doctors.map((res)=>{
+      if(username== res.firstName){
+        // this.doctorDisplay=[...this.doctorDisplay,res];
+        this.doctorDisplay.push(res);
+      }else{
+        console.log(false)
+      }
+    })
+    console.log(this.doctorDisplay);
   }
 
 }

@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   cityCat?:DrCity[];
-  filterItem:any;
+  filterItem!:string;
   doctors!: Doctor[] ;
   specialities!:DrCategory[];
   serchval!:string;
@@ -37,8 +37,8 @@ export class SearchComponent implements OnInit {
     console.log(res.value);
 
     this.serchval= res.value ;
+    this.filterItem=this.serchval;
    })
-
 
   }
 

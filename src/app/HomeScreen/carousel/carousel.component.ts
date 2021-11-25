@@ -14,6 +14,7 @@ export class CarouselComponent implements OnInit {
   numberOfPagesArray :number[]=[];
   pagesSize :number = 3 ;
   currentPage:number = 0;
+  filterItem:any;
 
 
   constructor(

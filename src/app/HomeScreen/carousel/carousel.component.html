@@ -7,10 +7,9 @@
   <div class="carousel-inner">
       <div class="carousel-item active " >
           <div class=" d-flex ">
-            <app-card class="cl1 " *ngFor="let x of doctorCarouselArr " [doctor]="x"></app-card>
+            <app-card class="cl1 " *ngFor="let x of doctorCarouselArr " [doctor]="x"  ></app-card>
           </div>
       </div>
-
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" (click)= "onpagintion(currentPage - 1)"
       data-bs-slide="prev">

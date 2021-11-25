@@ -13,10 +13,12 @@ doctor!:Doctor;
   constructor(private DoctorService:NewDoctorService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.activatedRoute.params.subscribe((res)=>{
-    //   this.doctor = this.DoctorService.getProductById(res.id);
-    //   console.log(this.doctor);
-    // });
-  }
+    this.activatedRoute.params.subscribe((res)=>{
+      this.DoctorService.getDoctorById(res.id).subscribe(res => {
+        this.doctor = res as Doctor;
+    });
+  })
+
+}
 
 }

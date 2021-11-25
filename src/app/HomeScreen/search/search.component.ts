@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
   doctors!: Doctor[] ;
   specialities!:DrCategory[];
 
-
   constructor(private city:CityCatService,private docotrName:NewDoctorService,private category:CategoryService,) { }
 
   ngOnInit(): void {
@@ -31,6 +30,9 @@ export class SearchComponent implements OnInit {
     })
     })
 
+  }
+  clickme(username:string) {
+    console.log('it does nothing',username);
   }
 
 }

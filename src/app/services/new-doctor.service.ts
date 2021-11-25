@@ -18,4 +18,7 @@ export class NewDoctorService {
   AddNewDoctor(Doctor:Doctor){
     return this.AngularFireStore.collection(this.dbPath).add(Doctor);
   }
+  getDoctorById(id: string) {
+    return this.AngularFireStore.collection(this.dbPath).doc(id).valueChanges();
+  }
 }

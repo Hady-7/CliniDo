@@ -1,4 +1,7 @@
+import { Doctor } from './../../../models/Doctor.model';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NewDoctorService } from 'src/app/services/new-doctor.service';
 
 @Component({
   selector: 'app-doctor-details',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctor-details.component.scss']
 })
 export class DoctorDetailsComponent implements OnInit {
-
-  constructor() { }
+doctor!:Doctor;
+  constructor(private DoctorService:NewDoctorService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
+    this.activatedRoute.params.subscribe((res)=>{
+      this.DoctorService.getDoctorById(res.id).subscribe(res => {
+        this.doctor = res as Doctor;
+    });
+  })
+
+}
 
 }

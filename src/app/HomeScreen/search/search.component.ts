@@ -19,7 +19,6 @@ export class SearchComponent implements OnInit {
   inputValue:string="";
   doctorDisplay!:Doctor[];
 
-
   constructor(private city:CityCatService,private docotrName:NewDoctorService,private category:CategoryService,) { }
 
   ngOnInit(): void {

@@ -5,6 +5,7 @@ import { NewDoctorService } from 'src/app/services/new-doctor.service';
 import { DrCity } from 'src/app/models/DrCity.model';
 import { Doctor } from 'src/app/models/Doctor.model';
 import { CategoryService } from 'src/app/services/category.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -13,11 +14,13 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class SearchComponent implements OnInit {
   cityCat?:DrCity[];
-  filterItem:any;
+  filterItem!:string;
   doctors!: Doctor[] ;
   specialities!:DrCategory[];
+  serchval!:string;
 
-  constructor(private city:CityCatService,private docotrName:NewDoctorService,private category:CategoryService,) { }
+
+  constructor(private city:CityCatService,private docotrName:NewDoctorService,private category:CategoryService,private activat:ActivatedRoute ) { }
 
   ngOnInit(): void {
     this.specialities=this.category.DoctorCategory;
@@ -29,6 +32,13 @@ export class SearchComponent implements OnInit {
       return {...data}
     })
     })
+
+    this.activat.queryParams.subscribe(res=>{
+    console.log(res.value);
+
+    this.serchval= res.value ;
+    this.filterItem=this.serchval;
+   })
 
   }
   clickme(username:string) {

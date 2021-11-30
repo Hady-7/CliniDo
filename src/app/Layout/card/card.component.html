@@ -1,10 +1,17 @@
 <!-- <div class="col-md-4"> -->
   <div class="card mb-2"  >
-      <img class="card-img-top" src="../../../assets/images/ProfilePictureMaker.png" routerLink="doctorDetails/{{doctor.id}}"  alt="Card image cap">
+      <img class="card-img-top" src="../../../assets/images/ProfilePictureMaker.png"  [routerLink]="['doctorDetails']" [queryParams]="{ value: doctor.id }"
+      alt="Card image cap">
       <div>
-          <h4 class="card-title ps-3" routerLink="doctorDetails/:{{doctor.id}}">{{doctor.firstName}}</h4>
+          <h4 class="card-title ps-3"[routerLink]="['doctorDetails']" [queryParams]="{ value: doctor.id }"
+          >{{doctor.firstName}}</h4>
           <p class="mb-1 ps-3">{{doctor.drCategory}}</p>
-          <p class="text-muted ps-3"routerLink="doctorDetails/:{{doctor.id}}">{{doctor.mobile}}</p>
+          <p class="text-muted ps-3"
+
+
+          [routerLink]="['doctorDetails']" [queryParams]="{ value: doctor.id }"
+
+          >{{doctor.mobile}}</p>
 
           <div class="d-flex">
               <div class="col-md-6 icon">
@@ -14,7 +21,8 @@
                   <i class="fa fa-eye" aria-hidden="true"></i><span>5442</span>
               </div>
           </div>
-          <h6 class="ps-3 pt-1" routerLink="doctorDetails/:{{doctor.id}}" >{{doctor.firstName}} {{doctor.lastName}}</h6>
+          <h6 class="ps-3 pt-1" [routerLink]="['doctorDetails']" [queryParams]="{ value: doctor.id }"
+          >{{doctor.firstName}} {{doctor.lastName}}</h6>
           <p class="ps-3"> {{doctor.drCity}}</p>
           <div class="d-flex">
               <div class="col-md-4 d-flex flex-column">

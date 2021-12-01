@@ -2,6 +2,7 @@ import { Doctor } from './../../../models/Doctor.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NewDoctorService } from 'src/app/services/new-doctor.service';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-doctor-details',
@@ -18,7 +19,25 @@ doctor!:Doctor;
         this.doctor = res as Doctor;
     });
   })
+  console.log(this.doctor);
+
+  this.ShowClinInfo();
+  // this.ShowRatingReviews();
 
 }
+
+   ShowClinInfo(){
+      $('#clinic-info').css('display', 'block');
+      $('#ratingReviews').css('display', 'none');
+      $('#ShowClinInfo').addClass('active');
+      $('#ShowRatingReviews').removeClass('active');
+  }
+
+   ShowRatingReviews(){
+      $('#ratingReviews').css('display', 'block');
+      $('#clinic-info').css('display', 'none');
+      $('#ShowRatingReviews').addClass('active');
+      $('#ShowClinInfo').removeClass('active');
+  }
 
 }

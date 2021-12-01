@@ -18,11 +18,23 @@ export class FindDoctorComponent implements OnInit {
   @ViewChild("doctorForm",{static:true}) doctorForm!:NgForm;
   DoctorForm=<Doctor>{};
   DoctorCategory!:DrCategory[];
+<<<<<<< HEAD
   CityCategory:string[]=[];
   doctors!:Doctor[];
   AreaCategory!:{};
+=======
+  CityCategory!:string[];
+  CitiesCategory!:string[];
+  doctors!:Doctor[];
+  AreaCategory!:any;
+  filterItem:any;
+  selectedCity:DrCity=new DrCity(1,'Alexandria');
+  cities!:DrCity[];
+  areas!:DrArea[];
+>>>>>>> origin/hafsa
 
-  constructor(private DoctorCatService:CategoryService,private CityCatService:CityCatService,private AreaService:AreaCatService) {
+
+  constructor(private DoctorCatService:CategoryService,private AreaService:AreaCatService) {
     this.DoctorForm={
       firstName:'',
       lastName:'',
@@ -35,6 +47,7 @@ export class FindDoctorComponent implements OnInit {
 
   ngOnInit(): void {
     this.DoctorCategory=this.DoctorCatService.AllDoctorCategory();
+<<<<<<< HEAD
     // this.CityCategory=this.CityCatService.AllDoctorCity();
     this.AreaCategory = this.AreaService.AllAreas()
     console.log(this.AreaCategory);
@@ -46,4 +59,13 @@ export class FindDoctorComponent implements OnInit {
 
 
 
+=======
+    this.cities=this.AreaService.getCities();
+    this.onSelect(this.selectedCity.id);
+  }
+  onSelect(cityID:number){
+    this.areas=this.AreaService.getAreas().filter((item)=>
+      item.cityId==cityID)
+  }
+>>>>>>> origin/hafsa
 }

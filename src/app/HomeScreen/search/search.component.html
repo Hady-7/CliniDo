@@ -9,6 +9,7 @@
       </div>
 
       <div class="col-lg-2 col-md-2 col-sm-12">
+<<<<<<< HEAD
           <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3"
               aria-label=".form-select-lg" [(ngModel)]="filterItem">
               <option value={{city.name}} name="drcity" *ngFor="let city of cityCat"> {{city.name}}</option>
@@ -21,6 +22,25 @@
               <option value="">area</option>
               <option value="0">All areas</option>
           </select>
+=======
+        <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
+        aria-label=".form-select-lg"  [(ngModel)]="selectedCity.id"  (change)="onSelect(selectedCity.id)">
+        <option  [(ngModel)]="selectedCity.id">All Cities</option>
+        <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+    </select>
+
+
+      </div>
+
+      <div class="col-lg-2 col-md-2 col-sm-12">
+        <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drArea"
+        aria-label=".form-select-lg ">
+        <option selected name="drArea" value="0"> Choose Area </option>
+        <option  name="drArea"  [value]="area.id" *ngFor="let area of areas">{{area.name}}</option>
+      </select>
+
+
+>>>>>>> origin/hafsa
       </div>
 
       <div class="col-lg-5 col-md-5 col-sm-12">
@@ -31,12 +51,12 @@
                       <i class="icon"><img style="margin:4%;"
                               src="https://clinido.com/public/images/ic-type.svg"></i>
                       <input class="input  doctor-name" type="text" placeholder="Type doctor\center\hospital name"
-                          name="keywordmodel"  #username>
+                          name="inputValue" #username  [(ngModel)]="filterItem">
                   </div>
               </div>
               <div class="col-md-4 col-sm-12 col-xs-12">
                   <button type="button" style="background-color: #30c34a; color: white;"
-                      class="btn w-100 h-100 fs-4 fw-bold bttn-search"(click)="clickme(username.value)" > Search</button>
+                      class="btn w-100 h-100 fs-4 fw-bold bttn-search" (click)="clickme(username.value)">Search</button>
               </div>
           </div>
       </div>
@@ -97,22 +117,22 @@
                           <label class="cont" for="checkbox1">
                               <input type="checkbox" id="checkbox1" class="input-checkbox ">
                               Elevator
-                              <img src="../images/elavator.svg" alt="">
+                              <img src="/src/assets/images/elavator.svg" alt="">
                           </label>
                           <label class="cont" for="checkbox2">
                               <input type="checkbox" id="checkbox2" class="input-checkbox ">
                               Conditioner
-                              <img src="../images/air-conditioner.svg" alt="">
+                              <img src="/src/assets/images/air-conditioner.svg" alt="">
                           </label>
                           <label class="cont" for="checkbox3">
                               <input type="checkbox" id="checkbox3" class="input-checkbox ">
                               E-payment
-                              <img src="../images/visa-pay.svg" alt="">
+                              <img src="/src/assets/images/visa-pay.svg" alt="">
                           </label>
                           <label class="cont" for="checkbox4">
                               <input type="checkbox" id="checkbox4" class="input-checkbox ">
                               TV
-                              <img src="../images/tv.svg" alt="">
+                              <img src="/src/assets/images/tv.svg" alt="">
                           </label>
                       </div>
                   </div>

@@ -18,9 +18,9 @@ export class FindDoctorComponent implements OnInit {
   @ViewChild("doctorForm",{static:true}) doctorForm!:NgForm;
   DoctorForm=<Doctor>{};
   DoctorCategory!:DrCategory[];
-  CityCategory!:DrCity[];
+  CityCategory:string[]=[];
   doctors!:Doctor[];
-  AreaCategory!:DrArea[];
+  AreaCategory!:{};
 
   constructor(private DoctorCatService:CategoryService,private CityCatService:CityCatService,private AreaService:AreaCatService) {
     this.DoctorForm={
@@ -35,8 +35,15 @@ export class FindDoctorComponent implements OnInit {
 
   ngOnInit(): void {
     this.DoctorCategory=this.DoctorCatService.AllDoctorCategory();
-    this.CityCategory=this.CityCatService.AllDoctorCity();
-    // this.AreaCategory=this.AreaService.
+    // this.CityCategory=this.CityCatService.AllDoctorCity();
+    this.AreaCategory = this.AreaService.AllAreas()
+    console.log(this.AreaCategory);
+    for (const key in this.AreaCategory) {
+      this.CityCategory.push(key)
+    }
+
   }
+
+
 
 }

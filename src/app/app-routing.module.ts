@@ -7,13 +7,17 @@ import { DoctorFormComponent } from './DoctorForm/doctor-form/doctor-form.compon
 import { SearchComponent } from './HomeScreen/search/search.component';
 import { OnlineComponent } from './OnlinePage/online/online.component';
 import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doctor-details.component';
+import { BookingComponent } from './HomeScreen/carousel/booking/booking.component';
+import { BookingDetailsComponent } from './HomeScreen/carousel/booking-details/booking-details.component';
 
 const routes: Routes = [
   {path:"",component: FindDoctorComponent},
 
   {path:"newDoctor",component:DoctorFormComponent},
-  {path:"online/search",component:SearchComponent},
+  {path:"search",component:SearchComponent},
   {path:"online",component:OnlineComponent},
+  {path:"booking/:id",component:BookingComponent},
+  {path:"bookingDetails",component:BookingDetailsComponent},
   {path:"doctorDetails/:id" , component:DoctorDetailsComponent},
 ];
 

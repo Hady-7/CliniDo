@@ -16,11 +16,13 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './HomeScreen/search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OnlineComponent } from './OnlinePage/online/online.component';
 import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doctor-details.component';
+import { BookingComponent } from './HomeScreen/carousel/booking/booking.component';
+import { BookingDetailsComponent } from './HomeScreen/carousel/booking-details/booking-details.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
     SearchComponent,
     OnlineComponent,
     DoctorDetailsComponent,
+    BookingComponent,
+    BookingDetailsComponent,
   ],
 
   imports: [
@@ -45,7 +49,8 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
   ],
   exports: [
     FontAwesomeModule

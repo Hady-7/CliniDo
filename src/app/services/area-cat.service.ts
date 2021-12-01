@@ -6,6 +6,18 @@ import { DrArea } from '../models/DrArea.model';
     providedIn: 'root'
 })
 export class AreaCatService {
+    alex={
+      "alex":{
+        1:"hafsa",
+        2:"hady"
+      }
+    }
+    giza={
+      "giza":{
+        1:"hafsa",
+        2:"hady"
+      }
+    }
     Alexandria: DrArea[] = [
         { id: 1, name: 'Borg El-Arab' },
         { id: 2, name: 'Semoha' },
@@ -15,6 +27,7 @@ export class AreaCatService {
         { id: 6, name: 'Sedy Beshr' },
 
     ]
+
 
     Cairo: DrArea[] = [
         { id: 1, name: 'Naser City' },
@@ -264,9 +277,10 @@ export class AreaCatService {
 
 
 
-    // AllAreas(){
-    //   return [...this.DoctorCategory];
-    // }
+    AllAreas(){
+      // return [...this.DoctorCategory];
+      return{...this.alex,...this.giza}
+    }
     // AllDoctorCity() {
     //     return [...this.Qena];
     // }

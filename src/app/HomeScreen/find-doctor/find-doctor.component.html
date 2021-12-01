@@ -20,7 +20,7 @@
 </div>
 <div class="col-md-5 col-sm-12 col-xs-12">
 <form #doctorForm ="ngForm">
-  <button class="btn d-flex align-items-center w-100" style="background-color: #efeff4;">
+  <button class="btn d-flex align-items-center w-100" style="background-color: #efeff4;" routerLink="online">
       <img src="	https://clinido.com/public/images/online-consultation.svg" style="height: 40px; transform: scaleX(-1);">
       <p class="mt-2" style="margin-left: 20px;"> Book a medical teleconsultation</p>
       <svg id="svgg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#004f71"
@@ -47,7 +47,7 @@
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
                   aria-label=".form-select-lg">
                   <option selected name="drCity"> Choose City </option>
-                  <option value="1" *ngFor="let city of CityCategory" [value]="city.name">{{city.name}}</option>
+                  <option value="1" *ngFor="let city of CityCategory" [value]="city">{{city}}</option>
               </select>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">

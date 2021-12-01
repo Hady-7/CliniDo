@@ -1,4 +1,3 @@
-export interface DrArea{
-  id:number,
-  name:string,
+export class DrArea {
+  constructor(public id: number, public cityId: number, public name: string) { }
 }

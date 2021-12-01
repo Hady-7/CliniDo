@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-footer',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  arrowDir:boolean = true;
+
+handleOpen(){
+  this.arrowDir=!this.arrowDir
+}
 
   constructor() { }
 

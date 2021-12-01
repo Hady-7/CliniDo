@@ -18,11 +18,17 @@ export class FindDoctorComponent implements OnInit {
   @ViewChild("doctorForm",{static:true}) doctorForm!:NgForm;
   DoctorForm=<Doctor>{};
   DoctorCategory!:DrCategory[];
-  CityCategory!:DrCity[];
+  CityCategory!:string[];
+  CitiesCategory!:string[];
   doctors!:Doctor[];
-  AreaCategory!:DrArea[];
+  AreaCategory!:any;
+  filterItem:any;
+  selectedCity:DrCity=new DrCity(1,'Alexandria');
+  cities!:DrCity[];
+  areas!:DrArea[];
 
-  constructor(private DoctorCatService:CategoryService,private CityCatService:CityCatService,private AreaService:AreaCatService) {
+
+  constructor(private DoctorCatService:CategoryService,private AreaService:AreaCatService) {
     this.DoctorForm={
       firstName:'',
       lastName:'',
@@ -35,8 +41,11 @@ export class FindDoctorComponent implements OnInit {
 
   ngOnInit(): void {
     this.DoctorCategory=this.DoctorCatService.AllDoctorCategory();
-    this.CityCategory=this.CityCatService.AllDoctorCity();
-    this.AreaCategory=this.AreaService.AllAreas();
+    this.cities=this.AreaService.getCities();
+    this.onSelect(this.selectedCity.id);
   }
-
+  onSelect(cityID:number){
+    this.areas=this.AreaService.getAreas().filter((item)=>
+      item.cityId==cityID)
+  }
 }

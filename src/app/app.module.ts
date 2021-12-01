@@ -11,7 +11,6 @@ import { CarouselComponent } from './HomeScreen/carousel/carousel.component';
 import { StaticContentComponent } from './HomeScreen/static-content/static-content.component';
 import { CardComponent } from './Layout/card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
@@ -45,7 +44,8 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+
   ],
   exports: [
     FontAwesomeModule

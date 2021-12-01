@@ -1,4 +1,3 @@
-export interface DrCity{
-  id:number,
-  name:string,
+export class DrCity {
+  constructor(public id: number, public name: string) { }
 }

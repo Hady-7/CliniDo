@@ -20,7 +20,7 @@
 </div>
 <div class="col-md-5 col-sm-12 col-xs-12">
 <form #doctorForm ="ngForm">
-  <button class="btn d-flex align-items-center w-100" style="background-color: #efeff4;">
+  <button class="btn d-flex align-items-center w-100" style="background-color: #efeff4;" routerLink="online">
       <img src="	https://clinido.com/public/images/online-consultation.svg" style="height: 40px; transform: scaleX(-1);">
       <p class="mt-2" style="margin-left: 20px;"> Book a medical teleconsultation</p>
       <svg id="svgg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#004f71"
@@ -34,9 +34,9 @@
       <div class="row ">
           <div class="col-md-12 col-sm-12 col-xs-12  ">
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCategory"
-                  aria-label=".form-select-lg">
+                  aria-label=".form-select-lg" [(ngModel)]="filterItem" #inputval>
                   <option selected nsssame="drCity"> Choose a speciality </option>
-                  <option value="1" *ngFor="let cat of DoctorCategory"[value]="cat.name">{{cat.name}}</option>
+                  <option  *ngFor="let cat of DoctorCategory"[value]="cat.name">{{cat.name}}</option>
               </select>
           </div>
       </div>
@@ -45,17 +45,17 @@
       <div class="row justify-content-between">
           <div class="col-md-6 col-sm-6 col-xs-12 ">
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
-                  aria-label=".form-select-lg">
-                  <option selected name="drCity"> Choose City </option>
-                  <option value="1" *ngFor="let city of CityCategory" [value]="city.name">{{city.name}}</option>
+                  aria-label=".form-select-lg" [(ngModel)]="selectedCity.id" (change)="onSelect(selectedCity.id)">
+                  <option value="0" [(ngModel)]="selectedCity.id">All Cities</option>
+                  <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
               </select>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drArea"
                   aria-label=".form-select-lg ">
-                  <option selected name="drArea"> Choose Area </option>
-                  <option value="1" name="drArea" *ngFor="let area of AreaCategory" [value]="area.name">{{area.name}}</option>
-              </select>
+                  <option selected name="drArea" value="0"> Choose Area </option>
+                  <option  name="drArea"  [value]="area.id" *ngFor="let area of areas">{{area.name}}</option>
+                </select>
           </div>
       </div>
       <div class="row ">
@@ -70,7 +70,9 @@
           </div>
           <div class="col-md-4 col-sm-12 col-xs-12">
               <button type="button" style="background-color: #30c34a; color: white;"
-                  class="btn w-100 h-100 fs-4 fw-bold" routerLink="/search">Search</button>
+                  class="btn w-100 h-100 fs-4 fw-bold"
+                  [routerLink]="['search']" [queryParams]="{ value: inputval.value }"
+                   >Search</button>
           </div>
       </div>
 

@@ -4,8 +4,6 @@
           <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3"
               aria-label=".form-select-lg" [value]="serchval" [(ngModel)]="filterItem"  >
               <option value={{item.name}} name="drcategory" *ngFor="let item of specialities">{{item.name}}</option>
-
-
           </select>
 
       </div>
@@ -131,7 +129,7 @@
               </div>
               <div class="row">
                   <div class="col-md-6">
-                      <app-card *ngFor="let item of doctors |filter:filterItem " [doctor]="item"></app-card>
+                      <app-card *ngFor="let item of doctors |filter:filterItem" [doctor]="item"></app-card>
                   </div>
                   <div class="col-md-6">
 

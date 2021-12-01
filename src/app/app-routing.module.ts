@@ -7,13 +7,30 @@ import { DoctorFormComponent } from './DoctorForm/doctor-form/doctor-form.compon
 import { SearchComponent } from './HomeScreen/search/search.component';
 import { OnlineComponent } from './OnlinePage/online/online.component';
 import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doctor-details.component';
+import { BookingComponent } from './HomeScreen/carousel/booking/booking.component';
+import { BookingDetailsComponent } from './HomeScreen/carousel/booking-details/booking-details.component';
+import { LoginComponent } from './Authentication/login/login.component';
+import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './Authentication/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './Authentication/verify-email/verify-email.component';
+
+
+import { AuthGuard } from './guard/auth.guard';
+import { DashboardComponent } from './Authentication/dashboard/dashboard.component';
 
 const routes: Routes = [
-  {path:"",component: FindDoctorComponent},
+  {path:"",component: FindDoctorComponent ,canActivate:[AuthGuard]},
   {path:"newDoctor",component:DoctorFormComponent},
   {path:"search",component:SearchComponent},
   {path:"online",component:OnlineComponent},
+  {path:"booking/:id",component:BookingComponent},
+  {path:"bookingDetails",component:BookingDetailsComponent},
   {path:"doctorDetails/:id" , component:DoctorDetailsComponent},
+  {path:"login" , component:LoginComponent},
+  {path:"signup", component:SignUpComponent},
+  { path:'forgot-password', component: ForgotPasswordComponent },
+  { path:'verify-email-address', component: VerifyEmailComponent },
+  { path:'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

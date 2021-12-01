@@ -11,14 +11,24 @@ import { StaticContentComponent } from './HomeScreen/static-content/static-conte
 import { CardComponent } from './Layout/card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './HomeScreen/search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OnlineComponent } from './OnlinePage/online/online.component';
 import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doctor-details.component';
+import { BookingComponent } from './HomeScreen/carousel/booking/booking.component';
+import { BookingDetailsComponent } from './HomeScreen/carousel/booking-details/booking-details.component';
+import { LoginComponent } from './Authentication/login/login.component';
+import { SignUpComponent } from './Authentication/sign-up/sign-up.component';
+import { LoginamdsignupComponent } from './Authentication/loginamdsignup/loginamdsignup.component';
+import { ForgotPasswordComponent } from './Authentication/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './Authentication/verify-email/verify-email.component';
+import { AuthService } from './services/auth-service.service';
+import { DashboardComponent } from './Authentication/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +40,17 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
     CarouselComponent,
     StaticContentComponent,
     CardComponent,
-
     SearchComponent,
     OnlineComponent,
     DoctorDetailsComponent,
+    BookingComponent,
+    BookingDetailsComponent,
+    LoginComponent,
+    SignUpComponent,
+    LoginamdsignupComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    DashboardComponent,
   ],
 
   imports: [
@@ -41,15 +58,16 @@ import { DoctorDetailsComponent } from './HomeScreen/carousel/doctor-details/doc
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     Ng2SearchPipeModule,
-
+    ReactiveFormsModule
   ],
   exports: [
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

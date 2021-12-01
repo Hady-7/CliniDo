@@ -9,20 +9,6 @@
       </div>
 
       <div class="col-lg-2 col-md-2 col-sm-12">
-<<<<<<< HEAD
-          <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3"
-              aria-label=".form-select-lg" [(ngModel)]="filterItem">
-              <option value={{city.name}} name="drcity" *ngFor="let city of cityCat"> {{city.name}}</option>
-          </select>
-      </div>
-
-      <div class="col-lg-2 col-md-2 col-sm-12">
-          <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3"
-              aria-label=".form-select-lg" [(ngModel)]="filterItem">
-              <option value="">area</option>
-              <option value="0">All areas</option>
-          </select>
-=======
         <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
         aria-label=".form-select-lg"  [(ngModel)]="selectedCity.id"  (change)="onSelect(selectedCity.id)">
         <option  [(ngModel)]="selectedCity.id">All Cities</option>
@@ -40,7 +26,6 @@
       </select>
 
 
->>>>>>> origin/hafsa
       </div>
 
       <div class="col-lg-5 col-md-5 col-sm-12">

@@ -45,15 +45,9 @@
       <div class="row justify-content-between">
           <div class="col-md-6 col-sm-6 col-xs-12 ">
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
-<<<<<<< HEAD
-                  aria-label=".form-select-lg">
-                  <option selected name="drCity"> Choose City </option>
-                  <option value="1" *ngFor="let city of CityCategory" [value]="city">{{city}}</option>
-=======
                   aria-label=".form-select-lg" [(ngModel)]="selectedCity.id" (change)="onSelect(selectedCity.id)">
                   <option value="0" [(ngModel)]="selectedCity.id">All Cities</option>
                   <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
->>>>>>> origin/hafsa
               </select>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">

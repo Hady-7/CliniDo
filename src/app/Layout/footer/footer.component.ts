@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import * as $ from 'jquery'
 
 @Component({
@@ -13,7 +14,7 @@ handleOpen(){
   this.arrowDir=!this.arrowDir
 }
 
-  constructor() { }
+  constructor(public translate:TranslateService) { }
 
   ngOnInit(): void {
   }

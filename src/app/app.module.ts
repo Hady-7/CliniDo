@@ -29,6 +29,10 @@ import { ForgotPasswordComponent } from './Authentication/forgot-password/forgot
 import { VerifyEmailComponent } from './Authentication/verify-email/verify-email.component';
 import { AuthService } from './services/auth-service.service';
 import { DashboardComponent } from './Authentication/dashboard/dashboard.component';
+import { LanguageComponent } from './HomeScreen/language/language.component';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -51,10 +55,12 @@ import { DashboardComponent } from './Authentication/dashboard/dashboard.compone
     ForgotPasswordComponent,
     VerifyEmailComponent,
     DashboardComponent,
+    LanguageComponent,
   ],
 
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -62,7 +68,15 @@ import { DashboardComponent } from './Authentication/dashboard/dashboard.compone
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      defaultLanguage:'en',
+      loader:{
+        provide:TranslateLoader,
+        useFactory:createTranslateLoader,
+        deps:[HttpClient]
+      }
+    }),
   ],
   exports: [
     FontAwesomeModule
@@ -71,3 +85,6 @@ import { DashboardComponent } from './Authentication/dashboard/dashboard.compone
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function createTranslateLoader(http:HttpClient){
+  return new TranslateHttpLoader(http,'./assets/i18/','.json')
+}

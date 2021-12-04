@@ -14,23 +14,23 @@
     </div>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-12 secDiv">
-      <h1>Complete your appointment</h1>
+      <h1>{{'Complete your appointment'|translate}}</h1>
       <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" name="name" placeholder="Type Your Name" formControlName="name">
+          <label for="name">{{'Name'|translate}}</label>
+          <input type="text" class="form-control" name="name" placeholder="{{'Type Your Name'|translate}}" formControlName="name">
         </div>
         <div class="form-group">
-          <label for="phone">Phone number</label>
-          <input type="text" class="form-control" name="phone"  placeholder="Phone number" formControlName="phone">
+          <label for="phone">{{'Phone number'|translate}}</label>
+          <input type="text" class="form-control" name="phone"  placeholder="{{'Phone number'|translate}}" formControlName="phone">
         </div>
         <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" name="email" placeholder="Type your Email address here.." formControlName="email">
+          <label for="email">{{'Email address'|translate}}</label>
+          <input type="email" class="form-control" name="email" placeholder="{{'Type your Email address here..'|translate}}" formControlName="email">
         </div>
         <div style="width: 100%;" class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" [disabled]="bookingForm.invalid">Book</button>
-          <button type="button" class="btn btn-secondary btn-lg bg-white text-dark">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" [disabled]="bookingForm.invalid">{{'Book'|translate}}</button>
+          <button type="button" class="btn btn-secondary btn-lg bg-white text-dark">{{'Cancel'|translate}}</button>
         </div>
 
       </form>
@@ -46,11 +46,11 @@
       </div> -->
       <div class="modal-body text-center" id="model">
         <img src="../../../../assets/images/ic-successfully-booked.svg" class="py-2">
-        <h5>Your Booking is confirmed</h5>
+        <h5>{{'Your Booking is confirmed'|translate}}</h5>
         <span>{{doctor.firstName}}</span>
       </div>
       <div class="modal-footer" id="modelfooter">
-        <button type="button" class="btn btn-lg btn-primary"  data-bs-dismiss="modal" (click)="onDetails()">Your booking details</button>
+        <button type="button" class="btn btn-lg btn-primary"  data-bs-dismiss="modal" (click)="onDetails()">{{'Your booking details'|translate}}</button>
       </div>
     </div>
   </div>

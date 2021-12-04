@@ -52,7 +52,13 @@
   font-weight: 700;
 }
 
-#areYouDoctor .content .areYouDoctorForm .formRow .formCol .form-group .formInputs {
+#areYouDoctor
+  .content
+  .areYouDoctorForm
+  .formRow
+  .formCol
+  .form-group
+  .formInputs {
   height: 56px;
   border-radius: 4px;
   background-color: #fff;
@@ -75,7 +81,14 @@
   display: block;
 }
 
-#areYouDoctor .content .areYouDoctorForm .formRow .formCol .form-group .iti .iti__selected-flag {
+#areYouDoctor
+  .content
+  .areYouDoctorForm
+  .formRow
+  .formCol
+  .form-group
+  .iti
+  .iti__selected-flag {
   padding: 6px;
   border-right: solid 0.5px #979797;
   background-color: #fff;
@@ -100,17 +113,31 @@
   display: block;
   width: 100%;
 }
-#model h5{
+#model h5 {
   color: #004f6c;
   text-align: left;
   font-weight: 700;
 }
-#model .go-app{
+#model .go-app {
   display: flex;
-  img{
+  img {
     width: 100%;
   }
 }
-.modal-content{
+.modal-content {
   background-color: #efeff4;
+}
+@media (min-width: 910px) {
+  #areYouDoctor .content {
+    padding-right: 107px;
+    padding-left: 86px;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-6 {
+    width: 50% !important;
+  }
+  .col-md-12 {
+    width: 100% !important;
+  }
 }

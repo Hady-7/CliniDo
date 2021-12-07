@@ -8,6 +8,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { CityCatService } from './../../services/city-cat.service';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-find-doctor',
@@ -26,9 +27,10 @@ export class FindDoctorComponent implements OnInit {
   selectedCity:DrCity=new DrCity(1,'Alexandria');
   cities!:DrCity[];
   areas!:DrArea[];
+  // currentLang!:string;
 
 
-  constructor(private DoctorCatService:CategoryService,private AreaService:AreaCatService) {
+  constructor(private DoctorCatService:CategoryService,private AreaService:AreaCatService,public translate:TranslateService) {
     this.DoctorForm={
       firstName:'',
       lastName:'',
@@ -48,4 +50,8 @@ export class FindDoctorComponent implements OnInit {
     this.areas=this.AreaService.getAreas().filter((item)=>
       item.cityId==cityID)
   }
+  // changeCurrentLang(lang:string){
+  //   this.translate.use(lang);
+  //   localStorage.setItem('currentLang',lang)
+  // }
 }

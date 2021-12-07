@@ -1,15 +1,45 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
-  title = 'CliniDo';
-  constructor(){
+export class LanguageService {
 
+  constructor(public translate:TranslateService) { }
+  setLanguage(lang: string) {
+    // alert("set"+lang);
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
+    localStorage.setItem("lang", lang.toLowerCase());
+  }
+
+  hasLanguage():boolean {
+    let lang =localStorage.getItem("lang");
+    let condition
+    if(lang){
+       condition = lang.length
+    }
+
+    return condition?true:false
+  }
+
+
+  // get user language
+  getLanguage() {
+    let lang: string|null|undefined = localStorage.getItem("lang");
+    console.log(lang)
+    // alert(`GetLanguage ${lang}`)
+    if (lang == "ar"){
+      return lang;
+    }
+    return this.getDefaultLanguage();
+  }
+
+
+  // default language
+  private getDefaultLanguage() {
+    return "en";
   }
   changeCssFile(lang: String): void {
     let headTag = document.getElementsByTagName("head")[0] as HTMLHeadElement;
@@ -36,6 +66,5 @@ export class AppComponent {
 
     }
   }
-
 
 }

@@ -6,6 +6,8 @@ import { NgForm } from '@angular/forms';
 import { Doctor } from 'src/app/models/Doctor.model';
 import { DrCity } from 'src/app/models/DrCity.model';
 import { NewDoctorService } from 'src/app/services/new-doctor.service';
+import { DrArea } from 'src/app/models/DrArea.model';
+import { AreaCatService } from 'src/app/services/area-cat.service';
 
 @Component({
   selector: 'app-doctor-form',
@@ -18,10 +20,14 @@ DoctorForm =<Doctor>{};
 DoctorCategory!:DrCategory[];
 CityCategory!:DrCity[];
 doctors!: Doctor[] ;
+selectedCity:DrCity=new DrCity(1,'Alexandria');
+cities!:DrCity[];
+areas!:DrArea[];
   constructor(
     private DoctorCatService:CategoryService,
     private CityCatService:CityCatService,
     private CrudService:NewDoctorService,
+    private AreaService:AreaCatService
   ) {
     this.DoctorForm = {
       firstName:'',
@@ -36,7 +42,7 @@ doctors!: Doctor[] ;
 
   ngOnInit(): void {
     this.DoctorCategory = this.DoctorCatService.AllDoctorCategory();
-    this.CityCategory = this.CityCatService.AllDoctorCity();
+    // this.CityCategory = this.CityCatService.AllDoctorCity();
     this.CrudService.getAllDoctor().subscribe(res => {
     this.doctors = res.map(actions =>{
       const data = actions.payload.doc.data() as Doctor;
@@ -44,6 +50,12 @@ doctors!: Doctor[] ;
       return {...data}
     })
     })
+    this.cities=this.AreaService.getCities();
+    this.onSelect(this.selectedCity.id);
+  }
+  onSelect(cityID:number){
+    this.areas=this.AreaService.getAreas().filter((item)=>
+      item.cityId==cityID)
   }
 
   onSubmit(Form:NgForm){

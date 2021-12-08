@@ -10,8 +10,8 @@
 
       <div class="col-lg-2 col-md-2 col-sm-12">
         <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
-        aria-label=".form-select-lg"  (change)="onSelect(selectedCity.id)">
-        <option  [(ngModel)]="selectedCity.id">{{'Choose City'|translate}}</option>
+        aria-label=".form-select-lg"  (change)="onSelect(selectedCity.id)" [(ngModel)]="selectedCity.id">
+        <option>{{'Choose City'|translate}}</option>
         <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
     </select>
 

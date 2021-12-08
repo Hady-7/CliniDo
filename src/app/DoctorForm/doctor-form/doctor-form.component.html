@@ -6,7 +6,7 @@
 <section id="areYouDoctor">
   <div class="container-fluid content">
     <div class="title">
-      <h1>{{'Are you a Doctor?'|translate}}</h1>
+      <h1 [ngStyle]="{'text-align': currentLang =='ar'? 'right' : 'center'}">{{'Are you a Doctor?'|translate}}</h1>
     </div>
     <div class="areYouDoctorForm">
       <div class="container-fluid">
@@ -56,8 +56,8 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
                 <div class="form-group">
                   <label for="city">{{'Choose City'|translate}}</label>
-                  <select class="input-field input-lg valid formInputs" id="selectCity" name="drCity" (change)="onSelect(selectedCity.id)">
-                    <option name="drCity" [(ngModel)]="selectedCity.id">{{'Choose City'|translate}}</option>
+                  <select class="input-field input-lg valid formInputs" id="selectCity" name="drCity" (change)="onSelect(selectedCity.id)" [(ngModel)]="selectedCity.id">
+                    <option name="drCity" >{{'Choose City'|translate}}</option>
                     <option *ngFor="let city of cities" [value]="city.id">
                       {{ city.name }}
                     </option>

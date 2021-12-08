@@ -9,12 +9,15 @@ import * as $ from 'jquery'
 })
 export class FooterComponent implements OnInit {
   arrowDir:boolean = true;
+  currentLang:any;
 
 handleOpen(){
   this.arrowDir=!this.arrowDir
 }
 
-  constructor(public translate:TranslateService) { }
+  constructor(public translate:TranslateService) {
+    this.currentLang=localStorage.getItem("currentLang");
+  }
 
   ngOnInit(): void {
   }

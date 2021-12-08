@@ -27,7 +27,8 @@ export class FindDoctorComponent implements OnInit {
   selectedCity:DrCity=new DrCity(1,'Alexandria');
   cities!:DrCity[];
   areas!:DrArea[];
-  // currentLang!:string;
+  currentLang:any;
+
 
 
   constructor(private DoctorCatService:CategoryService,private AreaService:AreaCatService,public translate:TranslateService) {
@@ -39,6 +40,7 @@ export class FindDoctorComponent implements OnInit {
       drArea:[],
       drCity:[]
     }
+    this.currentLang=localStorage.getItem("currentLang");
    }
 
   ngOnInit(): void {

@@ -11,7 +11,10 @@ import * as $ from 'jquery'
 })
 export class DoctorDetailsComponent implements OnInit {
 doctor!:Doctor;
-  constructor(private DoctorService:NewDoctorService,private activatedRoute:ActivatedRoute) { }
+currentLang:any;
+  constructor(private DoctorService:NewDoctorService,private activatedRoute:ActivatedRoute) {
+    this.currentLang=localStorage.getItem("currentLang")
+   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((res)=>{

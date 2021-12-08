@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" [ngStyle]="{'text-align': currentLang =='ar'? 'right' : 'left' }">
   <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide-to="0"
        [ngClass]="{'active': currentPage == i}" *ngFor="let page of numberOfPagesArray, let i = index" (click)="onpagintion(i)"

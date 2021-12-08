@@ -16,10 +16,12 @@ export class CarouselComponent implements OnInit {
   currentPage:number = 0;
   filterItem:any;
 
-
+  currentLang:any;
   constructor(
     private CrudService:NewDoctorService,
-  ) { }
+  ) {
+    this.currentLang=localStorage.getItem("currentLang")
+  }
 
   ngOnInit(): void {
     this.CrudService.getAllDoctor().subscribe(res => {

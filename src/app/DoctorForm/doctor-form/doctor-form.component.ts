@@ -23,6 +23,7 @@ doctors!: Doctor[] ;
 selectedCity:DrCity=new DrCity(1,'Alexandria');
 cities!:DrCity[];
 areas!:DrArea[];
+currentLang:any;
   constructor(
     private DoctorCatService:CategoryService,
     private CityCatService:CityCatService,
@@ -38,6 +39,7 @@ areas!:DrArea[];
       drArea : [],
 
     }
+    this.currentLang=localStorage.getItem("currentLang")
   }
 
   ngOnInit(): void {

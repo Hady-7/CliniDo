@@ -9,8 +9,8 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class LanguageComponent implements OnInit {
   currentLang!:string;
-  textDir: string = 'rtl';
-  constructor(public translate:TranslateService,private langSer:LanguageService) {
+  // textDir: string = 'rtl';
+  constructor(public translate:TranslateService,public langSer:LanguageService) {
     // this.currentLang=localStorage.getItem('currentLang') || 'en';
     // translate.use(this.currentLang);
    }
@@ -18,15 +18,19 @@ export class LanguageComponent implements OnInit {
      const html=document.getElementsByTagName("html");
      if(e=="ar"){
        html[0].setAttribute("dir","rtl");
+       html[0].classList.add("text-right");
        this.translate.use(e);
-       localStorage.setItem("currentLang","ar")
+       localStorage.setItem("currentLang","ar");
+       this.langSer.changeCssFile(e);
      }else{
        this.translate.use(e);
        html[0].setAttribute("dir","ltr");
-       localStorage.setItem("currentLang","en")
+       html[0].classList.add("text-left");
+       localStorage.setItem("currentLang","en");
+       this.langSer.changeCssFile(e);
      }
-    //  this.langSer.changeCssFile(this.currentLang);
    }
+
   //  changeCssFile(lang: String): void {
   //   let headTag = document.getElementsByTagName("head")[0] as HTMLHeadElement;
   //   let existingLink = document.getElementById("langCss") as HTMLLinkElement;
@@ -56,8 +60,4 @@ export class LanguageComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  // changeCurrentLang(lang:string){
-  //   this.translate.use(lang);
-  //   localStorage.setItem('currentLang',lang)
-  // }
 }

@@ -8,14 +8,16 @@ import { LanguageService } from 'src/app/services/language.service';
   styleUrls: ['./static-content.component.scss']
 })
 export class StaticContentComponent implements OnInit {
-  currentLang:String|undefined;
+  currentLang:any;
 
-  constructor(public translate:TranslateService,private lang:LanguageService) { }
 
+  constructor(public translate:TranslateService,public lang:LanguageService) {
+    this.currentLang=localStorage.getItem("currentLang")
+   }
 
   ngOnInit(): void {
-    this.currentLang=this.lang.getLanguage();
-    console.log(this.currentLang)
+    // this.currentLang=this.lang.getLanguage();
+    // console.log(this.currentLang)
   }
 
 }

@@ -5,6 +5,7 @@ import { Booking } from 'src/app/models/Booking.model';
 import { Doctor } from 'src/app/models/Doctor.model';
 import { BookingService } from 'src/app/services/booking.service';
 import { NewDoctorService } from 'src/app/services/new-doctor.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-booking',
@@ -16,9 +17,11 @@ export class BookingComponent implements OnInit {
   booking:Booking[]=[];
   bookingForm!: FormGroup;
   bookingInfo!: Booking;
+  bookinglist:Booking[]= [];
   constructor(
     private DoctorService: NewDoctorService,
     private BookingService: BookingService,
+    private userService: UserService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
     private router:Router
@@ -42,16 +45,21 @@ export class BookingComponent implements OnInit {
         return {...data}
       })
     })
+
   }
   onSubmit() {
+    const id = localStorage.getItem("user") as string;
     this.bookingInfo = {
       DoctorName: this.doctor.firstName,
       DoctorCategory: this.doctor.drCategory,
       name: this.bookingForm.value['name'],
       phone: this.bookingForm.value['phone'],
       email: this.bookingForm.value['email'],
+      resevationTime: new Date() 
     };
     this.BookingService.AddNewBooking(this.bookingInfo);
+    this.bookinglist=[...this.bookinglist,this.bookingInfo]
+    this.userService.updateUserById(id,this.bookinglist)
   }
 
   onDetails(){

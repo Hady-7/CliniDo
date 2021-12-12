@@ -31,7 +31,7 @@ export class AuthService {
     this.firebaseAuth.authState.subscribe( user => {
       if (user) {
         this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
+        localStorage.setItem('user', this.userData.uid);
            localStorage.getItem('user');
       } else {
         localStorage.setItem('user',"");
@@ -47,19 +47,22 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['']);
         });
-        this.SetUserData(result.user);
+        this.SetUserData(result.user as User);
       }).catch((error) => {
         window.alert(error.message)
       })
   }
 
-  SignUp(email:string, password:string) {
-    return this.firebaseAuth.createUserWithEmailAndPassword(email, password)
+  SignUp(form:any) {
+    console.log(form.displayName);
+    return this.firebaseAuth.createUserWithEmailAndPassword(form.email, form.password)
     .then((result) => {
+     result.user?.updateProfile(
+        {displayName:form.displayName}
+      )
       this.SendVerificationMail();
-      console.log(result);
-
-      this.SetUserData(result.user);
+      console.log(result.user);
+      this.SetUserData(result.user as User);
     }).catch((error) => {
       window.alert(error.message)
     })
@@ -67,18 +70,16 @@ export class AuthService {
 
 
 
-  SetUserData(user:any) {
+  SetUserData(user:User) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    const userData: User = {
+    this.userData  = {
       uid: user.uid,
       email: user.email,
-      // firstName:user.firstName,
-      // lastName:user.lastName,
-      displayName: user.firstName + user.lastName,
+      displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified
     }
-    return userRef.set(userData, {
+    return userRef.set(this.userData, {
       merge: true
     })
   }
@@ -100,7 +101,7 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
         })
-      this.SetUserData(result.user);
+      this.SetUserData(result.user as User);
     }).catch((error) => {
       window.alert(error)
     })

@@ -1,46 +1,40 @@
+$blue: #38b9db;
+$bgColor: #efeff4;
+$btnColor: #30c34b;
+.card {
+  padding: 10px 20px 10px 20px;
+}
+.d-flex {
+  justify-content: space-around;
+  text-align: center;
+}
 
+img {
+  border-radius: 50%;
+  width: 120px;
+  padding: 0.5em;
+  padding-bottom: 0.1em;
+}
+h4 {
+  color: $blue;
+}
 
+.icon span {
+  padding-left: 2px;
+}
 
-$blue :#38B9DB;
-$bgColor : #EFEFF4;
-$btnColor : #30C34B;
-.d-flex{
-          justify-content: space-around;
-          text-align: center;
-      }
-
-
-
-
-
-img{
-      border-radius: 50%;
-      width: 120px;
-      padding: .5em;
-      padding-bottom: .1em;
-  }
-  h4{
-      color: $blue;
-  }
-
-  .icon span{
-      padding-left: 2px;
-  }
-
-  .fees{
-      color: $blue;
-      font-size: 1.8em;
-  }
-  .desc{
-      font-size: .8em;
-  }
-  .btn{
-      width: 90%;
-      margin-left: 4%;
-      background-color: $btnColor;
-  }
-
-
+.fees {
+  color: $blue;
+  font-size: 1.8em;
+}
+.desc {
+  font-size: 0.8em;
+}
+.btn {
+  width: 90%;
+  margin-left: 4%;
+  background-color: $btnColor;
+}
 
 // @media screen and (max-width: 450px){
 //   #carouselExampleIndicators{
@@ -69,4 +63,3 @@ img{
 //       }
 //   }
 // }
-

@@ -1,8 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
-// html:lang(ar) * {
-//   text-align: right;
-// }
+html[dir="rtl"] {
+  .drDetails {
+    #clinic-info {
+      margin-right: 480px;
+      margin-top: -314px !important;
+    }
+    #ratingReviews {
+      margin-right: 480px;
+      margin-top: -314px !important;
+    }
+  }
+  #search-body {
+    h2 {
+      padding-right: 0.5em;
+    }
+  }
+  #areYouDoctor {
+    .content .title h1 {
+      text-align: right !important;
+    }
+  }
+  .c1 {
+    padding-right: 30px;
+    #one {
+      text-align: right;
+    }
+  }
+  .card {
+    padding: 10px 20px 10px 20px;
+  }
+  .wrapper {
+    margin-right: 70px;
+  }
+  .footer {
+    .mainHeader {
+      text-align: right !important;
+      padding-right: 79px;
+    }
+    .b4Last {
+      padding-right: 50px;
+    }
+    .last {
+      padding-right: 111px;
+    }
+  }
+}
 body {
   background-color: #efeff4;
 }

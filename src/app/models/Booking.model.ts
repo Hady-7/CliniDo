@@ -7,6 +7,7 @@ export interface Booking{
   email?:string,
   DoctorCategory?:DrCategory[],
   DoctorName?:string,
+  DoctorPhone?:number,
   resevationTime?:Date,
 
 }

@@ -47,22 +47,17 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['']);
         });
-        this.SetUserData(result.user as User);
+        // this.SetUserData(result.user as User);
       }).catch((error) => {
         window.alert(error.message)
       })
   }
 
   SignUp(form:any) {
-    console.log(form.displayName);
     return this.firebaseAuth.createUserWithEmailAndPassword(form.email, form.password)
     .then((result) => {
-     result.user?.updateProfile(
-        {displayName:form.displayName}
-      )
       this.SendVerificationMail();
-      console.log(result.user);
-      this.SetUserData(result.user as User);
+      this.SetUserData(result.user as User,form.displayName);
     }).catch((error) => {
       window.alert(error.message)
     })
@@ -70,12 +65,13 @@ export class AuthService {
 
 
 
-  SetUserData(user:User) {
+  SetUserData(user:User,displayName:string) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    console.log(user);
     this.userData  = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
+      displayName: displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified
     }
@@ -84,28 +80,28 @@ export class AuthService {
     })
   }
 
-  GoogleAuth() {
-    return this.AuthLogin( new GoogleAuthProvider());
-  }
+  // GoogleAuth() {
+  //   return this.AuthLogin( new GoogleAuthProvider());
+  // }
 
-  FaceAuth(){
-    return this.AuthLogin( new FacebookAuthProvider());
-  }
+  // FaceAuth(){
+  //   return this.AuthLogin( new FacebookAuthProvider());
+  // }
 
-  GitAuth(){
-    return this.AuthLogin( new GithubAuthProvider());
-  }
-  AuthLogin(provider:any) {
-    return this.firebaseAuth.signInWithPopup(provider)
-    .then((result) => {
-       this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
-        })
-      this.SetUserData(result.user as User);
-    }).catch((error) => {
-      window.alert(error)
-    })
-  }
+  // GitAuth(){
+  //   return this.AuthLogin( new GithubAuthProvider());
+  // }
+  // AuthLogin(provider:any) {
+  //   return this.firebaseAuth.signInWithPopup(provider)
+  //   .then((result) => {
+  //      this.ngZone.run(() => {
+  //         this.router.navigate(['dashboard']);
+  //       })
+  //     this.SetUserData(result.user as User);
+  //   }).catch((error) => {
+  //     window.alert(error)
+  //   })
+  // }
 
 
   SendVerificationMail() {

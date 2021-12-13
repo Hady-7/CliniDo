@@ -52,13 +52,15 @@ $btnColor : #30C34B;
   }
 }
 
-// @media screen and (max-width: 450px){
-//   #carouselExampleIndicators{
-//       .carousel-inner{
-//           padding: 2em .5em !important;
-//       }
-//   }
-// }
+@media screen and (max-width: 700px){
+  #caro{
+
+         width: 100% !important;
+  }
+  .caro_cont{
+    flex-direction: column;
+  }
+}
 
 // @media screen and (max-width: 768px){
 //   #carouselExampleIndicators{

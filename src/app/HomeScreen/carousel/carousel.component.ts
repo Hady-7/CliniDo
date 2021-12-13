@@ -35,12 +35,9 @@ export class CarouselComponent implements OnInit {
       this.calculatePageNumbers();
       })
 
-
-
   }
 
 calculatePageNumbers(){
-
   const numberOfPages = Math.ceil(this.doctors.length/this.pagesSize);
   for (let index = 0; index < numberOfPages; index++) {
    this.numberOfPagesArray.push(index+1);

@@ -20,8 +20,12 @@
                   <li class="nav-item">
                       <a class="nav-link  text mx-3 fw-bold mt-1 c" routerLink="newDoctor">Are you a Doctor?</a>
                   </li>
-                  <button type="button" id="btnLogin" class="btn ms-3 fw-bold"
+                  <button type="button" id="btnLogin" class="btn ms-3 fw-bold" *ngIf="!local"
                       style="color: white ;" routerLink="/login">Login</button>
+
+                       <button type="button" id="btnLogin" class="btn ms-3 fw-bold" *ngIf="local"
+                      style="color: white ;" routerLink="/login" (click)="authService.SignOut()">Logout </button>
+
                   <li class="nav-item">
                       <img src="../../../assets/images/egypt.png" routerLink="/dashboard" class="ms-3 mt-2" style="width: 30px;">
                   </li>

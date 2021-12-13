@@ -24,6 +24,4 @@ export class OnlineComponent implements OnInit {
 
   }
 
-
-
 }

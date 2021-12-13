@@ -3,9 +3,6 @@ import { AngularFireAuth  } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { User } from '../models/user';
 
-// import  firebase  from 'firebase/app';
-// import  {} from 'firebase/app'
-// import * as firebase from 'firebase/compat';
 
 import { FacebookAuthProvider, GoogleAuthProvider,GithubAuthProvider } from "firebase/auth";
 
@@ -19,7 +16,6 @@ import { Router } from "@angular/router";
 export class AuthService {
 
   userData: any;
-  // isLoggedIn=false;
 
   constructor(
     public firebaseAuth: AngularFireAuth,
@@ -47,8 +43,13 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['']);
         });
-        // this.SetUserData(result.user as User);
-      }).catch((error) => {
+        // this.SetUserData(result.user);
+      }).then(
+        ()=>{
+          window.location.reload();
+        }
+      )
+      .catch((error) => {
         window.alert(error.message)
       })
   }
@@ -126,6 +127,8 @@ export class AuthService {
         return this.firebaseAuth.signOut().then(() => {
           localStorage.removeItem('user');
           this.router.navigate(['sign-in']);
+        }).then(()=>{
+          window.location.reload();
         })
       }
 

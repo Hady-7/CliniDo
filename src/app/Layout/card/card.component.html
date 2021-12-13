@@ -2,8 +2,8 @@
 <div class="card mb-2">
   <img
     class="card-img-top"
-    src="../../../assets/images/ProfilePictureMaker.png"
-    routerLink="doctorDetails/{{doctor.id}}"
+    src="{{doctor.image}}"
+    routerLink="../doctorDetails/{{doctor.id}}"
     alt="Card image cap"
   />
   <div>
@@ -35,23 +35,23 @@
       <div class="col-md-4 d-flex flex-column">
         <i class="fas fa-history fees"></i>
         <span class="text-muted">{{'Waiting'|translate}}</span>
-        <span class="desc">15 {{'minute'|translate}}</span>
+        <span class="desc">{{doctor.time}} {{'minute'|translate}}</span>
       </div>
       <div class="col-md-4 d-flex flex-column">
         <i class="fas fa-dollar-sign fees"></i>
         <span class="text-muted">{{'Fees'|translate}}</span>
-        <span class="desc">400 {{'EGP'|translate}}</span>
+        <span class="desc">{{doctor.fees}} {{'EGP'|translate}}</span>
       </div>
       <div class="col-md-4 d-flex flex-column">
         <i class="fas fa-phone-alt fees"></i>
         <span class="text-muted">{{'Call us'|translate}}</span>
-        <span class="desc">01200056413</span>
+        <span class="desc">{{doctor.mobile}}</span>
       </div>
     </div>
     <p class="ps-3 pt-1 text-muted">{{ doctor.drArea }}</p>
     <button
       class="btn text-white text-center"
-      routerLink="booking/{{ doctor.id }}"
+      routerLink="../booking/{{ doctor.id }}"
     >
       {{'Book 14/102021 (5:00 PM - 8:00 PM)'|translate}}
     </button>

@@ -130,5 +130,22 @@
   "Type your Email address here..":"اكتب بريدك الإلكتروني",
   "Book":"احجز",
   "Cancel":"إلغاء",
-  "Your booking details":"تفاصيل حجزك"
+  "Your booking details":"تفاصيل حجزك",
+  "Profile":"الملف الشخصي",
+  "User Profile":"ملف المستخدم",
+  "Log out":"تسجيل الخروج",
+  "Reset Password":"استعادة كلمة السر",
+  "Please enter your email address to request a password reset":"من فضلك دخل ايميلك لإعادة استرجاع كلمة السر",
+  "Email Address":"عنوان البريد الإلكتروني",
+  "Go back to":"العودة إلي",
+  "Email address OR User name":"الايميل او اسم المستخدم",
+  "Password":"كلمة السر",
+  "Forgot password?":"نسيت كلمة السر؟",
+  "Register here":"سجل هنا",
+  "Sign UP":"الاشتراك",
+  "or sign up with:":"او الاشتراك بواسطة:",
+  "Thank You for Registering":"شكرا للتسجيل",
+  "We have sent a confirmation email to":"تم ارسال ايميل ل",
+  "Please check your email and click on the link to verfiy your email address":"برجاء التأكد من الايميل والضغط علي الرابط",
+  "Resend Verification Email":"اعادة ارسال تفعيل الايميل"
 }

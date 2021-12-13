@@ -131,5 +131,22 @@
   "Book":"Book",
   "Cancel":"Cancel",
   "Your Booking is confirmed":"تم الحجز بنجاح",
-  "Your booking details":"Your booking details"
+  "Your booking details":"Your booking details",
+  "Profile":"Profile",
+  "User Profile":"User Profile",
+  "Log out":"Log out",
+  "Reset Password":"Reset Password",
+  "Please enter your email address to request a password reset":"Please enter your email address to request a password reset",
+  "Email Address":"Email Address",
+  "Go back to":"Go back to",
+  "Email address OR User name":"Email address OR User name",
+  "Password":"Password",
+  "Forgot password?":"Forgot password?",
+  "Register here":"Register here",
+  "Sign UP":"Sign UP",
+  "or sign up with:":"or sign up with:",
+  "Thank You for Registering":"Thank You for Registering",
+  "We have sent a confirmation email to":"We have sent a confirmation email to",
+  "Please check your email and click on the link to verfiy your email address":"Please check your email and click on the link to verfiy your email address",
+  "Resend Verification Email":"Resend Verification Email"
 }

@@ -10,11 +10,13 @@ import { LanguageService } from 'src/app/services/language.service';
 export class LanguageComponent implements OnInit {
   currentLang!:string;
   imgSrc!:boolean;
-  // textDir: string = 'rtl';
+  img!:boolean;
+
   constructor(public translate:TranslateService,public langSer:LanguageService) {
    }
    changeLang(e:any){
      this.imgSrc=!this.imgSrc;
+     this.img = !this.img;
      const html=document.getElementsByTagName("html");
      if(e=="ar"){
        html[0].setAttribute("dir","rtl");

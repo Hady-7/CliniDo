@@ -20,13 +20,15 @@
                   <li class="nav-item">
                       <a class="nav-link  text mx-3 fw-bold mt-1 c" routerLink="newDoctor">{{'Are you a Doctor?'|translate}}</a>
                   </li>
-                  <button type="button" id="btnLogin" class="btn ms-3 fw-bold"
-                      style="color: white ;" routerLink="/login">{{'Login'|translate}}</button>
-                      <button type="button" id="btnLogin" class="btn ms-3 fw-bold"
-                      style="color: white ;" routerLink="/dashboard">{{'Profile'|translate}}</button>
+                  <button type="button" id="btnLogin" class="btn ms-3 fw-bold" *ngIf="!local"
+                      style="color: white ;" routerLink="/login">Login</button>
+
+                  <button type="button" id="btnLogin" class="btn ms-3 fw-bold" *ngIf="local"
+                      style="color: white ;" routerLink="/login" (click)="authService.SignOut()">Logout </button>
+
                   <li class="nav-item">
                       <app-language></app-language>
-                    </li>
+                  </li>
               </ul>
           </div>
       </div>

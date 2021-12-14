@@ -1,5 +1,4 @@
 $paddingMargin: 15px;
-<<<<<<< HEAD
 .footer {
   padding: 10px 0;
   font-size: 15px;
@@ -24,32 +23,6 @@ $paddingMargin: 15px;
         padding-left: $paddingMargin;
         width: 100%;
       }
-=======
-  .footer {
-    padding: 10px 0;
-    font-size: 15px;
-    font-family: "Markazi Text", serif;
-    padding-top: 35px;
-    background-color: #fff;
-
-    .content {
-      padding-right: 50px;
-      padding-left: 60px;
-      margin-right: auto;
-      margin-left: auto;
-
-      .row1 {
-        margin-right: -$paddingMargin;
-        margin-left: -$paddingMargin;
-
-        .footerCol {
-          position: relative;
-          min-height: 1px;
-          padding-right: $paddingMargin;
-          padding-left: $paddingMargin;
-          width: 100%;
-        }
->>>>>>> 864c4a9fdd1675429db6147eb015418b0308faac
 
       .mainHeader {
         color: #000;
@@ -216,4 +189,4 @@ $paddingMargin: 15px;
   .social {
     justify-content: space-between;
   }
-
+}

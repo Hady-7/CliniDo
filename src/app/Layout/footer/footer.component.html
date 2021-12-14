@@ -27,8 +27,8 @@
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 footerCol">
               <h1 class="d-lg-none d-block mainHeader" data-bs-toggle="collapse" href="#collapseExample1"
-                  role="button" aria-expanded="true" aria-controls="collapseExample1">
-                  <button class="arrow" (click)="handleOpen()"><i class="fa fa-lg" ></i></button>
+                  role="button" aria-expanded="true" aria-controls="collapseExample1" [ngClass]="(arrowDir)? 'mainHeader' : 'mainHeaderBlue'">
+                  <button class="arrow" (click)="handleOpen()"><i class="fa fa-lg"[ngClass]="(arrowDir)? 'fa-chevron-down' : 'fa-chevron-up'" ></i></button>
                   {{'cities'|translate}}
               </h1>
               <div class="collapse dropDownMenu" id="collapseExample1">
@@ -51,8 +51,8 @@
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 footerCol">
               <h1 class="d-lg-none d-block mainHeader" data-bs-toggle="collapse" href="#collapseExample2"
-                  role="button" aria-expanded="true" aria-controls="collapseExample2" >
-                  <button class="arrow" (click)="handleOpen()"><i class="fa fa-lg"></i></button>
+                  role="button" aria-expanded="true" aria-controls="collapseExample2"[ngClass]="(arrowDir)? 'mainHeader' : 'mainHeaderBlue'" >
+                  <button class="arrow" (click)="handleOpen()"><i class="fa fa-lg" [ngClass]="(arrowDir)? 'fa-chevron-down' : 'fa-chevron-up'"></i></button>
                   {{'polyclinics'|translate}}
               </h1>
               <div class="collapse dropDownMenu" id="collapseExample2">
@@ -64,13 +64,8 @@
                       <li><a class="dropdown-item" href="#">{{'more polyclinics'|translate}}</a></li>
                   </ul>
               </div>
-<<<<<<< HEAD
               <h1  class="d-lg-block d-none dropdown-toggle ms-3 mainHeader b4Last">{{'polyclinics'|translate}}</h1>
               <ul  class="d-lg-block d-none clinicList">
-=======
-              <h1 >{{'polyclinics'|translate}}</h1>
-              <ul class="d-lg-block d-none clinicList">
->>>>>>> 864c4a9fdd1675429db6147eb015418b0308faac
                   <li><a class="dropdown-item" href="#">{{'polyclinics venus clinics'|translate}}</a></li>
                   <li><a class="dropdown-item" href="#">{{'jumeirah clinics'|translate}}</a></li>
                   <li><a class="dropdown-item" href="#">{{'polyClinic alsafwa medical'|translate}}</a></li>
@@ -80,8 +75,8 @@
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 footerCol">
               <h1 class="d-lg-none d-block mainHeader" data-bs-toggle="collapse" href="#collapseExample3"
-                  role="button" aria-expanded="true" aria-controls="collapseExample3" >
-                  <button class="arrow" (click)="handleOpen()"><i class="fa fa-lg" ></i></button>
+                  role="button" aria-expanded="true" aria-controls="collapseExample3"[ngClass]="(arrowDir)? 'mainHeader' : 'mainHeaderBlue'" >
+                  <button class="arrow" (click)="handleOpen()"><i class="fa fa-lg"[ngClass]="(arrowDir)? 'fa-chevron-down' : 'fa-chevron-up'" ></i></button>
                   {{'cliniDo'|translate}}
               </h1>
               <div class="collapse dropDownMenu" id="collapseExample3">
@@ -93,11 +88,7 @@
                       <li><a class="dropdown-item" href="#">{{'insurance'|translate}}</a></li>
                   </ul>
               </div>
-<<<<<<< HEAD
               <h1  class="d-lg-block d-none dropdown-toggle ms-3 mainHeader last">{{'cliniDo'|translate}}</h1>
-=======
-              <h1 class="d-lg-block d-none dropdown-toggle ms-3 mainHeader">{{'cliniDo'|translate}}</h1>
->>>>>>> 864c4a9fdd1675429db6147eb015418b0308faac
               <ul  class="d-lg-block d-none clinicList">
                   <li><a class="dropdown-item" href="#">{{'about us'|translate}}</a></li>
                   <li><a class="dropdown-item" href="#">{{'clinido blog'|translate}}</a></li>

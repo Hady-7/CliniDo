@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 html[dir="rtl"] {
+  .carousel-control-prev {
+    display: none;
+  }
+  .carousel-control-next {
+    display: none;
+  }
   .drDetails {
     #clinic-info {
       margin-right: 480px;

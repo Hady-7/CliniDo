@@ -9,13 +9,11 @@ import { LanguageService } from 'src/app/services/language.service';
 })
 export class LanguageComponent implements OnInit {
   currentLang!:string;
-  imgSrc!:boolean;
   img!:boolean;
 
   constructor(public translate:TranslateService,public langSer:LanguageService) {
    }
    changeLang(e:any){
-     this.imgSrc=!this.imgSrc;
      this.img = !this.img;
      const html=document.getElementsByTagName("html");
      if(e=="ar"){
@@ -24,14 +22,12 @@ export class LanguageComponent implements OnInit {
        this.translate.use(e);
        localStorage.setItem("currentLang","ar");
        this.langSer.changeCssFile(e);
-      //  this.imgSrc='../../../assets/images/egypt.png';
      }else{
        this.translate.use(e);
        html[0].setAttribute("dir","ltr");
        html[0].classList.add("text-left");
        localStorage.setItem("currentLang","en");
        this.langSer.changeCssFile(e);
-      //  this.imgSrc='../../../assets/images/english.png';
      }
    }
 

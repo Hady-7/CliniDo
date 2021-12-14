@@ -147,5 +147,8 @@
   "Thank You for Registering":"شكرا للتسجيل",
   "We have sent a confirmation email to":"تم ارسال ايميل ل",
   "Please check your email and click on the link to verfiy your email address":"برجاء التأكد من الايميل والضغط علي الرابط",
-  "Resend Verification Email":"اعادة ارسال تفعيل الايميل"
+  "Resend Verification Email":"اعادة ارسال تفعيل الايميل",
+  "Don't have account ?":" مش عندك حساب؟",
+  "Logout":"تسجيل الخروج",
+  "Sign in":"تسجيل الدخول"
 }

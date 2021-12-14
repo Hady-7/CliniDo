@@ -29,9 +29,6 @@ export class AuthService {
         this.userData = user;
         localStorage.setItem('user', this.userData.uid);
            localStorage.getItem('user');
-      } else {
-        localStorage.setItem('user',"");
-          localStorage.getItem('user');
       }
     })
   }
@@ -43,7 +40,6 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['']);
         });
-        // this.SetUserData(result.user);
       }).then(
         ()=>{
           window.location.reload();
@@ -81,28 +77,29 @@ export class AuthService {
     })
   }
 
-  // GoogleAuth() {
-  //   return this.AuthLogin( new GoogleAuthProvider());
-  // }
+  GoogleAuth() {
+    return this.AuthLogin( new GoogleAuthProvider());
+  }
 
-  // FaceAuth(){
-  //   return this.AuthLogin( new FacebookAuthProvider());
-  // }
+  FaceAuth(){
+    return this.AuthLogin( new FacebookAuthProvider());
+  }
 
-  // GitAuth(){
-  //   return this.AuthLogin( new GithubAuthProvider());
-  // }
-  // AuthLogin(provider:any) {
-  //   return this.firebaseAuth.signInWithPopup(provider)
-  //   .then((result) => {
-  //      this.ngZone.run(() => {
-  //         this.router.navigate(['dashboard']);
-  //       })
-  //     this.SetUserData(result.user as User);
-  //   }).catch((error) => {
-  //     window.alert(error)
-  //   })
-  // }
+  GitAuth(){
+    return this.AuthLogin( new GithubAuthProvider());
+  }
+  AuthLogin(provider:any) {
+    return this.firebaseAuth.signInWithPopup(provider)
+    .then((result) => {
+       this.ngZone.run(() => {
+         this.router.navigate(['']);
+        })
+    }).then(()=> {
+      window.location.reload();
+    }).catch((error) => {
+      window.alert(error)
+    })
+  }
 
 
   SendVerificationMail() {
@@ -123,17 +120,14 @@ export class AuthService {
   }
 
 
-      SignOut() {
-        return this.firebaseAuth.signOut().then(() => {
-          localStorage.removeItem('user');
-          this.router.navigate(['sign-in']);
-        }).then(()=>{
-          window.location.reload();
-        })
-      }
+  SignOut() {
+    return this.firebaseAuth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['']);
+    }).then(()=>{
+      window.location.reload();
+    })
+  }
 
-      get isLoggedIn(): boolean {
-        const user = localStorage.getItem('user');
-        return (user !== null ) ? true : false;
-      }
+
     }

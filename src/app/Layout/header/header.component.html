@@ -23,12 +23,12 @@
                   <button type="button" id="btnLogin" class="btn ms-3 fw-bold" *ngIf="!local"
                       style="color: white ;" routerLink="/login">Login</button>
 
-                       <button type="button" id="btnLogin" class="btn ms-3 fw-bold" *ngIf="local"
+                  <button type="button" id="btnLogin" class="btn ms-3 fw-bold" *ngIf="local"
                       style="color: white ;" routerLink="/login" (click)="authService.SignOut()">Logout </button>
 
                   <li class="nav-item">
                       <app-language></app-language>
-                    </li>
+                  </li>
               </ul>
           </div>
       </div>

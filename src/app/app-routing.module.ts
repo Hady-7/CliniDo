@@ -19,13 +19,13 @@ import { AuthGuard } from './guard/auth.guard';
 import { DashboardComponent } from './Authentication/dashboard/dashboard.component';
 
 const routes: Routes = [
-  {path:"",component: FindDoctorComponent ,canActivate:[AuthGuard]},
-  {path:"newDoctor",component:DoctorFormComponent},
+  {path:"",component: FindDoctorComponent },
+  {path:"newDoctor",component:DoctorFormComponent ,canActivate:[AuthGuard]},
   {path:"search",component:SearchComponent},
   {path:"online",component:OnlineComponent},
-  {path:"booking/:id",component:BookingComponent},
-  {path:"bookingDetails",component:BookingDetailsComponent},
-  {path:"doctorDetails/:id" , component:DoctorDetailsComponent},
+  {path:"booking/:id",component:BookingComponent,canActivate:[AuthGuard]},
+  {path:"bookingDetails",component:BookingDetailsComponent,canActivate:[AuthGuard]},
+  {path:"doctorDetails/:id" , component:DoctorDetailsComponent,canActivate:[AuthGuard]},
   {path:"login" , component:LoginComponent},
   {path:"signup", component:SignUpComponent},
   { path:'forgot-password', component: ForgotPasswordComponent },

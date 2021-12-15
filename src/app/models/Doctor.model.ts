@@ -10,7 +10,7 @@ export interface Doctor{
   drCity:DrCity[],
   drArea:DrArea[],
   fees?:number,
-  image?:string,
+  url?:string,
   time?:number,
   addr?:string
 }

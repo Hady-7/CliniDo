@@ -35,7 +35,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12  ">
               <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCategory"
                   aria-label=".form-select-lg">
-                  <option selected nsssame="drCity"> {{'Choose a speciality'|translate}} </option>
+                  <option selected name="drCity"> {{'Choose a speciality'|translate}} </option>
                   <option  *ngFor="let cat of DoctorCategory"[value]="cat.name">{{cat.name}}</option>
               </select>
           </div>

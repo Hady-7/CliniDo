@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from '@firebase/util/dist/src/obj';
 import { Observable } from 'rxjs';
 import { Booking } from 'src/app/models/Booking.model';
+import { Doctor } from 'src/app/models/Doctor.model';
 import { BookingService } from 'src/app/services/booking.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { BookingService } from 'src/app/services/booking.service';
 })
 export class BookingDetailsComponent implements OnInit {
   bookingDetails!: Booking;
+  doctor!: Doctor;
   constructor() {
   }
   ngOnInit(): void {

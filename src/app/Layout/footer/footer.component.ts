@@ -9,10 +9,22 @@ import * as $ from 'jquery'
 })
 export class FooterComponent implements OnInit {
   arrowDir:boolean = true;
+  sarrowDir:boolean = true;
+  tarrowDir:boolean = true;
+  farrowDir:boolean = true;
   currentLang:any;
 
 handleOpen(){
   this.arrowDir=!this.arrowDir
+}
+handleOpens(){
+  this.sarrowDir=!this.sarrowDir
+}
+handleOpent(){
+  this.tarrowDir=!this.tarrowDir
+}
+handleOpenf(){
+  this.farrowDir=!this.farrowDir
 }
 
   constructor(public translate:TranslateService) {

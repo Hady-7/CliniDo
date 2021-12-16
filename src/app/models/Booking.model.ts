@@ -9,5 +9,5 @@ export interface Booking{
   DoctorName?:string,
   DoctorPhone?:number,
   resevationTime?:Date,
-
+  image?:string
 }

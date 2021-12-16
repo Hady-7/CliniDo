@@ -53,6 +53,7 @@ export class BookingComponent implements OnInit {
       DoctorName: this.doctor.firstName,
       DoctorPhone: this.doctor.mobile,
       DoctorCategory: this.doctor.drCategory,
+      image: this.doctor.url,
       name: this.bookingForm.value['name'],
       phone: this.bookingForm.value['phone'],
       email: this.bookingForm.value['email'],

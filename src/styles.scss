@@ -1,10 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 html[dir="rtl"] {
+  overflow-x: hidden;
   body {
     font-family: "Segoe UI" !important;
+    overflow-x: hidden;
+  }
+  #drProfileHeader {
+    .card .prof-img {
+      float: right !important;
+    }
+    .doctorName {
+      float: right;
+    }
   }
   @media (min-width: 576px) {
+    .bookContainer .online .card .clinics {
+      margin-top: -26px !important;
+    }
     #clinic-info {
       margin-right: auto;
       // margin-left: 0 !important;

@@ -1,5 +1,5 @@
 <div class="col-lg-3 col-md-3 col-sm-12 m-auto w-50 " id="details">
-  <h3>thank you for submitting your booking details</h3>
+  <h3>{{'thank you for submitting your booking details'|translate}}</h3>
   <div class="card mb-2 doctor shadow p-3 " style="border-radius: 1em;" >
     <div style="width:20%">
       <img class="card-img  py-1" src="{{doctor.url}}"
@@ -7,12 +7,12 @@
     </div>
     <div style="width: 60%;">
 
-      <h5 class="card-title">Name : {{bookingDetails.name}}</h5>
-      <p class="card-title">Phone : {{bookingDetails.phone}}</p>
-      <p class="card-title">Email : {{bookingDetails.email}}</p>
-      <p class="card-title">Doctor : {{bookingDetails.DoctorName}}</p>
-      <p class="card-title">specialised in : {{bookingDetails.DoctorName}}</p>
-      <span class="text-muted">Date :Saturday | 23 Oct 2021 (5:00 PM - 8:00 PM)</span>
+      <h5 class="card-title">{{'Name'|translate}} : {{bookingDetails.name}}</h5>
+      <p class="card-title">{{'Phone'|translate}} : {{bookingDetails.phone}}</p>
+      <p class="card-title">{{'Email'|translate}} : {{bookingDetails.email}}</p>
+      <p class="card-title">{{'Doctor'|translate}} : {{bookingDetails.DoctorName}}</p>
+      <p class="card-title">{{'specialised in'|translate}} : {{bookingDetails.DoctorName}}</p>
+      <span class="text-muted">{{'Date'|translate}} :Saturday | 23 Oct 2021 (5:00 PM - 8:00 PM)</span>
 
     </div>
 </div>

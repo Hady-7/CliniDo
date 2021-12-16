@@ -130,7 +130,7 @@
   "Type your Email address here..":"Type your Email address here..",
   "Book":"Book",
   "Cancel":"Cancel",
-  "Your Booking is confirmed":"تم الحجز بنجاح",
+  "Your Booking is confirmed":"Your Booking is confirmed",
   "Your booking details":"Your booking details",
   "Profile":"Profile",
   "User Profile":"User Profile",
@@ -151,5 +151,11 @@
   "Resend Verification Email":"Resend Verification Email",
   "Don't have account ?":"Don't have account ?",
   "Logout":"Logout",
-  "Sign in":"Sign in"
+  "Sign in":"Sign in",
+  "thank you for submitting your booking details":"thank you for submitting your booking details",
+  "Phone":"Phone",
+  "Email":"Email",
+  "Doctor":"Doctor",
+  "specialised in":"specialised in",
+  "Date":"Date"
 }

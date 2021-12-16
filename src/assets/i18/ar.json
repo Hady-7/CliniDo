@@ -150,5 +150,12 @@
   "Resend Verification Email":"اعادة ارسال تفعيل الايميل",
   "Don't have account ?":" مش عندك حساب؟",
   "Logout":"تسجيل الخروج",
-  "Sign in":"تسجيل الدخول"
+  "Sign in":"تسجيل الدخول",
+  "Your Booking is confirmed":"تم الحجز بنجاح",
+  "thank you for submitting your booking details":"شكرا للتأكيد علي تفاصيل حجزك",
+  "Phone":"موبايل",
+  "Email":"البريد الالكتروني",
+  "Doctor":"دكتور",
+  "specialised in":"متخصص في",
+  "Date":"التاريخ"
 }

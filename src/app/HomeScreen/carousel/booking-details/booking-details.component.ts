@@ -18,5 +18,6 @@ export class BookingDetailsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.bookingDetails = window.history.state;
+    console.log(this.bookingDetails);
   }
 }

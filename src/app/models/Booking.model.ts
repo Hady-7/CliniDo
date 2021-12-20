@@ -9,6 +9,6 @@ export interface Booking{
   DoctorName?:string,
   DoctorPhone?:number,
   resevationTime?:string,
-  // changed type timeStamp to String
-
+  image?:string,
+  addr?:string
 }

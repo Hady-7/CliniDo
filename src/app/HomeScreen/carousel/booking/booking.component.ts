@@ -48,17 +48,18 @@ export class BookingComponent implements OnInit {
 
   }
   onSubmit() {
+    const date = new Date();
     const id = localStorage.getItem("user") as string;
     this.bookingInfo = {
       DoctorName: this.doctor.firstName,
       DoctorPhone: this.doctor.mobile,
       DoctorCategory: this.doctor.drCategory,
+      image: this.doctor.url,
       name: this.bookingForm.value['name'],
       phone: this.bookingForm.value['phone'],
       email: this.bookingForm.value['email'],
-      resevationTime: new Date().toString()
-      //added toString
-      //format Date
+      resevationTime:date.toString(),
+      addr:this.doctor.addr
     };
     this.BookingService.AddNewBooking(this.bookingInfo);
     this.bookinglist=[...this.bookinglist,this.bookingInfo]

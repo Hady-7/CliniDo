@@ -8,6 +8,7 @@ export interface Booking{
   DoctorCategory?:DrCategory[],
   DoctorName?:string,
   DoctorPhone?:number,
-  resevationTime?:Date,
+  resevationTime?:string,
+  // changed type timeStamp to String
 
 }

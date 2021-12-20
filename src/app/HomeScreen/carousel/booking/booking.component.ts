@@ -56,7 +56,9 @@ export class BookingComponent implements OnInit {
       name: this.bookingForm.value['name'],
       phone: this.bookingForm.value['phone'],
       email: this.bookingForm.value['email'],
-      resevationTime: new Date()
+      resevationTime: new Date().toString()
+      //added toString
+      //format Date
     };
     this.BookingService.AddNewBooking(this.bookingInfo);
     this.bookinglist=[...this.bookinglist,this.bookingInfo]

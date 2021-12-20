@@ -26,7 +26,7 @@
                 <div class="form-group">
                   <label for="lastName">{{'Last name'|translate}}</label>
                   <input id="lastName" class="form-control input-lg formInputs" type="text" name="lastName"
-                    placeholder="{{'Type Your Last Name Here...'|translate}}" autocomplete="off" ngModel />
+                    placeholder="{{'Type Your Last Name Here...'|translate}}" autocomplete="off" ngModel required/>
                   <span id="lastname1" style="color: #ff0000"></span>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                     name="countryCode" value="20" />
                   <div class="iti iti--allow-dropdown">
                     <input class="form-control input-lg center formInputs" id="mobile" type="tel" name="mobile"
-                      maxlength="17" autocomplete="off" data-intl-tel-input-id="0" value placeholder=" " ngModel />
+                      maxlength="17" autocomplete="off" data-intl-tel-input-id="0" value placeholder=" "  ngModel [pattern]="mobNumberPattern"  required/>
                   </div>
                   <span class="text-danger text-center show-msg" id="mobile1" style="color: #ff0000"></span>
                 </div>
@@ -45,7 +45,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
                 <div class="form-group">
                   <label for="speciality">{{'Choose a speciality'|translate}}</label>
-                  <select class="input-field input-lg formInputs" id="mySelect" name="drCategory" ngModel>
+                  <select class="input-field input-lg formInputs" id="mySelect" name="drCategory" ngModel required>
                     <option name="drCity">{{'Choose Category'|translate}}</option>
                     <option *ngFor="let cat of DoctorCategory" [value]="cat.name">
                       {{ cat.name }}
@@ -56,7 +56,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
                 <div class="form-group">
                   <label for="city">{{'Choose City'|translate}}</label>
-                  <select class="input-field input-lg valid formInputs" id="selectCity" name="drCity" (change)="onSelect(selectedCity.id)" [(ngModel)]="selectedCity.id">
+                  <select class="input-field input-lg valid formInputs" id="selectCity" name="drCity" (change)="onSelect(selectedCity.id)" required [(ngModel)]="selectedCity.id">
                     <option name="drCity" >{{'Choose City'|translate}}</option>
                     <option *ngFor="let city of cities" [value]="city.id">
                       {{ city.name }}
@@ -67,7 +67,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
                 <div class="form-group">
                   <label for="area">{{'Choose Area'|translate}}</label>
-                  <select id="selectArea" name="drArea" class="input-field input-lg formInputs">
+                  <select id="selectArea" name="drArea" class="input-field input-lg formInputs" required>
                     <option value="0" id="drArea" name="drArea" selected >
                       {{'Choose Area'|translate}}
                     </option>

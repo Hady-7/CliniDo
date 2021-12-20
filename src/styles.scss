@@ -62,6 +62,19 @@ html[dir="rtl"] {
       }
     }
   }
+  @media (min-width: 910px) {
+    #drProfileHeader {
+      height: 226px;
+    }
+    .drDetails {
+      #clinic-info {
+        margin-right: 343px;
+      }
+      #ratingReviews {
+        margin-right: 343px;
+      }
+    }
+  }
   @media (min-width: 992px) {
     #drProfileHeader {
       height: 220px;

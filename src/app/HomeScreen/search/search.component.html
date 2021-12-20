@@ -58,8 +58,8 @@
               <li> / {{'all speciallities'|translate}}</li>
           </ul>
       </div>
-      <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+      <div class="row" style="justify-content: center;">
+          <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
               <div class="search-filter">
                   <div class="filter-title">
                       <h2>{{'filter'|translate}}</h2>
@@ -122,7 +122,7 @@
                       </div>
                   </div>
               </div>
-          </div>
+          </div> -->
           <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
               <div class="col-md-12 search-title">
                   <h4 id="h4">{{'Book best doctor in Egypt'|translate}}</h4>
@@ -130,9 +130,6 @@
               <div class="row">
                   <div class="col-md-6">
                       <app-card *ngFor="let item of doctors |filter:filterItem" [doctor]="item"></app-card>
-                  </div>
-                  <div class="col-md-6">
-
                   </div>
               </div>
           </div>

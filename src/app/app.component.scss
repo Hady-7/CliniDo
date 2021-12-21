@@ -5,6 +5,10 @@ $logoColor: #004f71;
 $callUsColor: #38b9db;
 $margTop: 8%;
 
+.mck-running-on .notranslate .vis {
+  visibility: hidden !important;
+}
+
 #cont1 {
   padding-top: $margTop;
 }

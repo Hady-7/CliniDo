@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./booking.component.scss'],
 })
 export class BookingComponent implements OnInit {
+  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{11}$";
   doctor!: Doctor;
   booking:Booking[]=[];
   bookingForm!: FormGroup;
@@ -58,7 +59,7 @@ export class BookingComponent implements OnInit {
       name: this.bookingForm.value['name'],
       phone: this.bookingForm.value['phone'],
       email: this.bookingForm.value['email'],
-      resevationTime:date.toString(),
+      resevationTime:date.toLocaleString(),
       addr:this.doctor.addr
     };
     this.BookingService.AddNewBooking(this.bookingInfo);

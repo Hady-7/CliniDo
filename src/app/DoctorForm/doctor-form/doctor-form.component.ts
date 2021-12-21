@@ -16,7 +16,7 @@ import { AreaCatService } from 'src/app/services/area-cat.service';
 })
 export class DoctorFormComponent implements OnInit {
 // @ViewChild('form')  signupForm!:NgForm;
-mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";
+mobNumberPattern = "^((\\+91-?)|0)?[0-9]{11}$";
 DoctorForm =<Doctor>{};
 DoctorCategory!:DrCategory[];
 CityCategory!:DrCity[];

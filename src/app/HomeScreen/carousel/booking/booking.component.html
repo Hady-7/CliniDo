@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
           <label for="phone">{{'Phone number'|translate}}</label>
-          <input type="text" class="form-control" name="phone"  placeholder="{{'Phone number'|translate}}" formControlName="phone">
+          <input type="text" class="form-control" name="phone" ngModel [pattern]="mobNumberPattern"  placeholder="{{'Phone number'|translate}}" formControlName="phone">
         </div>
         <div class="form-group">
           <label for="email">{{'Email address'|translate}}</label>

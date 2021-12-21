@@ -2,13 +2,13 @@
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 html[dir="rtl"] {
   overflow-x: hidden;
-  // .kommunicate-custom-iframe {
-  //   position: absolute !important;
-  //   right: 600px !important;
-  // }
+
   body {
     font-family: "Segoe UI" !important;
     overflow-x: hidden;
+  }
+  #btnLogin {
+    font-size: 12px;
   }
   #drProfileHeader {
     .card .prof-img {
@@ -76,6 +76,9 @@ html[dir="rtl"] {
     }
   }
   @media (min-width: 992px) {
+    .navbar-light .navbar-brand {
+      flex-basis: 60%;
+    }
     #drProfileHeader {
       height: 220px;
     }

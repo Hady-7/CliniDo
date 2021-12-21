@@ -139,3 +139,16 @@ $logoColor: #004f71;
     color: #004e6f;
   }
 }
+.d-card {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 700px) {
+  .d-card {
+    flex-direction: column !important;
+    justify-content: center;
+  }
+}

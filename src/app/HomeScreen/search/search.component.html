@@ -3,6 +3,7 @@
       <div class="col-lg-2 col-md-2 col-sm-12 ">
           <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3"
               aria-label=".form-select-lg" [value]="serchval" [(ngModel)]="filterItem">
+              <option value="" selected name="drCity"> {{'Choose a speciality'|translate}} </option>
               <option value={{item.name}} name="drcategory" *ngFor="let item of specialities">{{item.name}}</option>
           </select>
 
@@ -10,15 +11,15 @@
 
       <div class="col-lg-2 col-md-2 col-sm-12">
         <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drCity"
-        aria-label=".form-select-lg"  (change)="onSelect(selectedCity.id)" [(ngModel)]="selectedCity.id">
-        <option>{{'Choose City'|translate}}</option>
-        <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+        aria-label=".form-select-lg"  (change)="onSelect(selectedCity.id)"  [(ngModel)]="filterItem" #cityVal>
+        <option value="" selected>{{'Choose City'|translate}}</option>
+        <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
     </select>
 
 
       </div>
 
-      <div class="col-lg-2 col-md-2 col-sm-12">
+      <!-- <div class="col-lg-2 col-md-2 col-sm-12">
         <select style="background-color:#efeff4 ;" class="form-select form-select-lg mb-3" name="drArea"
         aria-label=".form-select-lg ">
         <option selected name="drArea" value="0"> {{'Choose Area'|translate}} </option>
@@ -26,7 +27,7 @@
       </select>
 
 
-      </div>
+      </div> -->
 
       <div class="col-lg-5 col-md-5 col-sm-12">
           <div class="row">
@@ -132,10 +133,8 @@
                       <app-card *ngFor="let item of doctors |filter:filterItem" [doctor]="item"></app-card>
                   </div>
               </div> -->
-              <div class="d-flex flex-row">
-                <div class="col-md-6">
-                    <app-card *ngFor="let item of doctors |filter:filterItem" [doctor]="item"></app-card>
-                </div>
+              <div class="d-card">
+                    <app-card class="col-md-5 col-lg-5 col-sm-7" *ngFor="let item of doctors |filter:filterItem" [doctor]="item"></app-card>
             </div>
           </div>
       </div>

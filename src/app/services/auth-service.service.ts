@@ -47,6 +47,7 @@ export class AuthService {
       )
       .catch((error) => {
         window.alert(error.message)
+        
       })
   }
 

@@ -67,11 +67,11 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formCol">
                 <div class="form-group">
                   <label for="area">{{'Choose Area'|translate}}</label>
-                  <select id="selectArea" name="drArea" class="input-field input-lg formInputs" required>
-                    <option value="0" id="drArea" name="drArea" selected>
+                  <select id="selectArea" name="drArea" class="input-field input-lg formInputs" ngModel required>
+                    <option value="0" id="drArea" name="drArea" selected >
                       {{'Choose Area'|translate}}
                     </option>
-                    <option  id="drArea" name="drArea"   [value]="area.id" *ngFor="let area of areas">
+                    <option  id="drArea" name="drArea"   [value]="area.name" *ngFor="let area of areas">
                       {{area.name}}
                     </option>
                   </select>
